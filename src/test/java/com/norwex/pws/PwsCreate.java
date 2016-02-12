@@ -46,7 +46,7 @@ import com.norwex.nco.TestBase;
 			getpws("Address2_input").sendKeys(address2);
 			getpws("Zip_input").sendKeys(zip);
 			getpws("Search_button").click();
-			this.Short(2);
+			this.Short(3);
 			getpws("AddressConfirm_button").click();
 			this.Short(3);
 			getpws("Submit_button").click();

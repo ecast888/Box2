@@ -27,7 +27,7 @@ public class PIL extends TestBase
 	@Test (priority=1)
 	public void NavigateToPIL() throws InterruptedException
 		{
-			m.pilorder();
+			m.pilorder();  //*
 		}
 	
 	@Test (priority=2)
