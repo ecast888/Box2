@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Cases: Suite A" verbose="5" >
+  
+  <test name="Party Order">
+    <classes>
+      <class name="com.norwex.nco.A_Party" />
+    </classes>
+  </test>  
+  
+  <test name="Contacts">
+    <classes>
+      <class name="com.norwex.nco.Contacts" />
+    </classes>
+  </test> 
+  
+   <test name="Enrollment US">
+    <classes>
+   <class name="com.norwex.nco.Enrollment_US" />
+   </classes>
+    </test>
+    
+      <test name="Enrollment CA">
+    <classes>
+   <class name="com.norwex.nco.Enrollment_CA" />
+   </classes>
+    </test>
+      
+  <test name="Financial">
+    <classes>
+      <class name="com.norwex.nco.Financial" />
+    </classes>
+  </test> 
+ </suite>
+ 
+
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+

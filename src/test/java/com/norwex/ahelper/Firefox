@@ -1,0 +1,5 @@
+
+
+https://ftp.mozilla.org/pub/firefox/releases/ *now using version 41.0 (roll back)
+https://www.youtube.com/watch?v=0eSORVemv80  ***how to use waits
+In Firefox you can set Firebug to be always on by opening about:config and setting extensions.firebug.allPagesActivation to on.

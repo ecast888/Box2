@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Cases: Suite B" verbose="5" >
+
+ <test name="Personal Supply Order">
+  <classes>
+      <class name="com.norwex.pcs.PIL" />
+    </classes>
+  </test> 
+
+<test name="Customer Direct Order">
+    <classes>
+      <class name="com.norwex.pcs.CustomerOrder" />
+    </classes>
+  </test> 
+  
+  <test name="Shopping Spree">
+  <classes>
+      <class name="com.norwex.pcs.ShoppingSpree" />
+    </classes>
+  </test> 
+ </suite>
+ 
+
+

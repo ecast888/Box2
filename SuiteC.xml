@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Cases: Suite C" verbose="5" >
+
+ <test name="Pws Contact Me">
+  <classes>
+      <class name="com.norwex.pws.PwsContactme" />
+    </classes>
+  </test> 
+
+<test name="Pws Create">
+    <classes>
+      <class name="com.norwex.pws.PwsCreate" />
+    </classes>
+  </test> 
+  
+  <test name="Pws Shop">
+  <classes>
+      <class name="com.norwex.pws.PwsShop" />
+    </classes>
+  </test> 
+ </suite>
+ 
+
