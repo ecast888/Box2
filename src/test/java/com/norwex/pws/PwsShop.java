@@ -1,13 +1,17 @@
 package com.norwex.pws;
 import java.io.IOException;
+
 import com.norwex.pws.*;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.SkipException; 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import com.norwex.nco.Menus;
 import com.norwex.nco.TestBase;
 
@@ -39,7 +43,7 @@ public class PwsShop extends TestBase
 	@Test(priority=3)
 	public void OrderItems() throws InterruptedException
 	{
-		this.addProducts("Fluff and Tumble Dryer Balls", "Cleaning Paste", "Descaler", 1);
+		this.addProducts("Bottle Brush Sleeve", "Bottle Brush Sleeve", "Spirinetts", "Descaler", 1);
 	}
 
 	@Test(priority=4, dependsOnMethods={"OrderItems"})
@@ -55,6 +59,7 @@ public class PwsShop extends TestBase
 	@Test(priority=5, dependsOnMethods={"OrderItems"})
 	public void CheckOut() throws InterruptedException
 	{
+		this.Short(2);
 		getpws("checkout_link").click();
 		
 		System.out.println("*****Check if login is required******");
@@ -124,7 +129,7 @@ public class PwsShop extends TestBase
 	 public void NavigateToShop() throws InterruptedException
 	 { driver.findElement(By.xpath("//*[@id='shopnow']/a")).click(); }
 
-		private void addProducts( String item1, String item2, String item3, int i) throws InterruptedException
+		private void addProducts( String item1, String item2, String item3, String item4, int i) throws InterruptedException
 			{
 			System.out.println("*****Adding products******");
 			getpws("SearchItem_input").clear();
@@ -134,13 +139,20 @@ public class PwsShop extends TestBase
 			this.Short(2);
 			
 			getpws("SearchItem_input").clear();
-			getpws("SearchItem_input").sendKeys(item2);    // item1
+			getpws("SearchItem_input").sendKeys(item2);    // item2
 			this.tab();	this.tab();	this.tab();
 			this.enter();
 			this.Short(2);
 		
 			getpws("SearchItem_input").clear();
-			getpws("SearchItem_input").sendKeys(item3);    // item1
+			getpws("SearchItem_input").sendKeys(item3);    // item3
+			this.tab();	this.tab();	this.tab();
+			this.enter();
+			this.Short(2);
+			
+
+			getpws("SearchItem_input").clear();
+			getpws("SearchItem_input").sendKeys(item4);    // item4
 			this.tab();	this.tab();	this.tab();
 			this.enter();
 			this.Short(2);
@@ -164,9 +176,20 @@ public class PwsShop extends TestBase
 		 this.Short(1);
 		 getpws("ConfirmDelete_button").click();
 	 }
+	 
+	 private void Payment()
+
+	{
+		Select line1 = new Select(driver.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_month")));
+		line1.selectByVisibleText("Feb");
+		Select line2 = new Select(driver.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_year")));
+		line2.selectByVisibleText("2017");
+		getpws("amountTocharge").sendKeys("15.00");
+		getpws("AddPayment_button").click();
+		
+	}
+
 }
-
-
 
 
 

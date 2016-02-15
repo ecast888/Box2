@@ -1,6 +1,5 @@
 package com.norwex.nco;
 import com.norwex.logins.*;
-
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,7 +19,7 @@ import org.testng.annotations.Test;
 	    public static  String newpartyName ="Feb"+rand;
 	    	  
 		Menus m = new Menus();
-		TestBase a = new TestBase();
+		//TestBase a = new TestBase();
 		
 		
 	@BeforeTest

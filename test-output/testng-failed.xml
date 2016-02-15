@@ -11,10 +11,7 @@
       <class name="com.norwex.pws.PwsShop">
         <methods>
           <include name="DisplaySummary"/>
-          <include name="UpdateCart"/>
-          <include name="SetAccount"/>
           <include name="Authenticate"/>
-          <include name="Shop"/>
           <include name="OrderItems"/>
           <include name="CheckOut"/>
           <include name="PayForOrders"/>

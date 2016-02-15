@@ -24,7 +24,7 @@ public class Enrollment_US extends TestBase
 		public static String address= "2605 SW H ave";
 		public static String address2= "Lawton";
 		public static String zip= "73505";
-		//public static String joincode="RECSHOP2500";
+		public static String joincode="HALFITEM1";
 	
 		Menus m= new Menus();
 		
@@ -48,7 +48,7 @@ public class Enrollment_US extends TestBase
 		
 		//  Certify am over 18 and add join code
 		
-		//getobject("JoinCode_input").sendKeys(joincode);
+		getobject("JoinCode_input").sendKeys(joincode);
 		this.Short(1);
 		getenro("Certify_checkbox").click();
 		this.Short(1);
