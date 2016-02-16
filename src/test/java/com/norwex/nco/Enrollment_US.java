@@ -24,7 +24,7 @@ public class Enrollment_US extends TestBase
 		public static String address= "2605 SW H ave";
 		public static String address2= "Lawton";
 		public static String zip= "73505";
-		public static String joincode="HALFITEM1";
+	    public static String joincode="HALFITEM1";
 	
 		Menus m= new Menus();
 		

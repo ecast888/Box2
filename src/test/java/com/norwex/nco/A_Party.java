@@ -150,7 +150,7 @@ import org.testng.annotations.Test;
 		this.Short(2);
 		//getobject("AcceptHost_alert").click();
 		this.NewBooking(newpartyName);
-		this.Short(4);
+		this.Short(3);
 		getobject("Continue_button").click();   
 	}
 

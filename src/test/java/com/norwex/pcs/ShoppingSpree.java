@@ -2,9 +2,7 @@ package com.norwex.pcs;
 import com.norwex.nco.Menus;
 import com.norwex.nco.TestBase;
 import com.norwex.logins.Util;
-
 import java.io.IOException;
-
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -118,7 +116,6 @@ public class ShoppingSpree extends TestBase
 		this.Short(2);
 		getobjectB("SPDelete2_button").click();
 	}
-	
 }
 
 

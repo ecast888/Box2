@@ -1,41 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="1" total="7" passed="5">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="126496" started-at="2016-02-15T22:37:17Z" finished-at="2016-02-15T22:39:24Z">
+  <suite name="Default suite" duration-ms="39268" started-at="2016-02-16T17:25:01Z" finished-at="2016-02-16T17:25:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="126496" started-at="2016-02-15T22:37:17Z" finished-at="2016-02-15T22:39:24Z">
-      <class name="com.norwex.pws.PwsShop">
-        <test-method status="PASS" signature="Authenticate()[pri:0, instance:com.norwex.pws.PwsShop@73846619]" name="Authenticate" is-config="true" duration-ms="6010" started-at="2016-02-15T16:37:17Z" finished-at="2016-02-15T16:37:23Z">
+    <test name="Default test" duration-ms="39268" started-at="2016-02-16T17:25:01Z" finished-at="2016-02-16T17:25:40Z">
+      <class name="com.norwex.pws.PwsContactme">
+        <test-method status="PASS" signature="Authenticate()[pri:0, instance:com.norwex.pws.PwsContactme@73846619]" name="Authenticate" is-config="true" duration-ms="26583" started-at="2016-02-16T11:25:01Z" finished-at="2016-02-16T11:25:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Authenticate -->
-        <test-method status="PASS" signature="SetAccount()[pri:1, instance:com.norwex.pws.PwsShop@73846619]" name="SetAccount" duration-ms="38128" started-at="2016-02-15T16:37:23Z" finished-at="2016-02-15T16:38:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetAccount -->
-        <test-method status="PASS" signature="Shop()[pri:2, instance:com.norwex.pws.PwsShop@73846619]" name="Shop" duration-ms="6892" started-at="2016-02-15T16:38:02Z" finished-at="2016-02-15T16:38:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Shop -->
-        <test-method status="PASS" signature="OrderItems()[pri:3, instance:com.norwex.pws.PwsShop@73846619]" name="OrderItems" duration-ms="17420" started-at="2016-02-15T16:38:08Z" finished-at="2016-02-15T16:38:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OrderItems -->
-        <test-method status="PASS" signature="UpdateCart()[pri:4, instance:com.norwex.pws.PwsShop@73846619]" name="UpdateCart" duration-ms="16503" started-at="2016-02-15T16:38:26Z" depends-on-methods="com.norwex.pws.PwsShop.OrderItems" finished-at="2016-02-15T16:38:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- UpdateCart -->
-        <test-method status="PASS" signature="CheckOut()[pri:5, instance:com.norwex.pws.PwsShop@73846619]" name="CheckOut" duration-ms="21911" started-at="2016-02-15T16:38:42Z" depends-on-methods="com.norwex.pws.PwsShop.OrderItems" finished-at="2016-02-15T16:39:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckOut -->
-        <test-method status="FAIL" signature="PayForOrders()[pri:6, instance:com.norwex.pws.PwsShop@73846619]" name="PayForOrders" duration-ms="19613" started-at="2016-02-15T16:39:04Z" depends-on-methods="com.norwex.pws.PwsShop.CheckOut" finished-at="2016-02-15T16:39:24Z">
+        <test-method status="FAIL" signature="ContactForm()[pri:1, instance:com.norwex.pws.PwsContactme@73846619]" name="ContactForm" duration-ms="12641" started-at="2016-02-16T11:25:27Z" finished-at="2016-02-16T11:25:40Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-	at com.norwex.pws.PwsShop.PayForOrders(PwsShop.java:86)
+	at com.norwex.pws.PwsContactme.ContactForm(PwsContactme.java:43)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -65,38 +45,8 @@
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PayForOrders -->
-        <test-method status="SKIP" signature="DisplaySummary()[pri:7, instance:com.norwex.pws.PwsShop@73846619]" name="DisplaySummary" duration-ms="0" started-at="2016-02-15T16:39:24Z" depends-on-methods="com.norwex.pws.PwsShop.PayForOrders" finished-at="2016-02-15T16:39:24Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method PwsShop.DisplaySummary()[pri:7, instance:com.norwex.pws.PwsShop@73846619] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method PwsShop.DisplaySummary()[pri:7, instance:com.norwex.pws.PwsShop@73846619] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DisplaySummary -->
-      </class> <!-- com.norwex.pws.PwsShop -->
+        </test-method> <!-- ContactForm -->
+      </class> <!-- com.norwex.pws.PwsContactme -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

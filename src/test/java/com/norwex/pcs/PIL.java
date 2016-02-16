@@ -49,7 +49,7 @@ public class PIL extends TestBase
 	@Test (priority=5)
 	public void DeleteItem() throws InterruptedException
 		{
-			this.Short(4);
+			this.Short(3);
 			this.Remove();
 		}
 	
