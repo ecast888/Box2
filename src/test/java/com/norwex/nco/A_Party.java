@@ -57,7 +57,7 @@ import org.testng.annotations.Test;
 		this.Short(1);
 		getobject("zipcode_search_button").click();
 		this.Short(2);   
-		getobject("AddressValidateAlert_button").click();   // OR1 *-> create party
+		getobject("AddressValidateAlert").click();   // OR1 *-> create party
 		this.Short(2);
 		getobject("startpartynow").click();
 	}
@@ -162,10 +162,10 @@ import org.testng.annotations.Test;
 	{  
 		System.out.println("!---Confirm Final Pay---!");
 		this.Short(2);
-		getobject("HCardHolderName_input").clear();
-		getobject("HCardHolderName_input").sendKeys("Alexy Desouza");
+		getobject("CardholderName").clear();
+		getobject("CardholderName").sendKeys("Alexy Desouza");
 		getobject("Add_button2").click();
-		getobject("Proceed_button").click();
+		getobject("ReviewParty").click();
 		this.Short(2);
 		getobject("Finish_button").click();
 	}
@@ -275,8 +275,8 @@ import org.testng.annotations.Test;
 		getobject("GuestZipcode_input").clear();
 		getobject("GuestZipcode_input").sendKeys(zipcodeInput);
 		getobject("GuestZipcode_Search").click();
-		this.Short(2);
-		getobject("AddressValidateAlert_button").click();
+		this.Short(3);
+		getobject("AddressValidateAlert").click();
 		this.Short(2);
 		getobject("SaveGuest").click();
 	}

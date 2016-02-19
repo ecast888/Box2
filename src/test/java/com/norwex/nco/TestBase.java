@@ -59,6 +59,7 @@ public class TestBase
 			/******************************************************************************************************
 			********************************************* Object Configuration **************************************************
 			*******************************************************************************************************/	
+				
 		//	party order properties
 				poe = new Properties();
 				fn = new FileInputStream(System.getProperty("user.dir")+ "//src//test//java//config//poe.properties");
@@ -106,7 +107,7 @@ public class TestBase
 		// 	load the suite1 sheet
 				datatable = new Xls_Reader(System.getProperty("user.dir")+"//src//test//java//datatable//Controller.xlsx");
 			 	driver= new EventFiringWebDriver(dr);
-			 	driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
 			
 		}

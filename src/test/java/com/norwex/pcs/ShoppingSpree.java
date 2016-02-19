@@ -2,7 +2,11 @@ package com.norwex.pcs;
 import com.norwex.nco.Menus;
 import com.norwex.nco.TestBase;
 import com.norwex.logins.Util;
+
 import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -81,6 +85,20 @@ public class ShoppingSpree extends TestBase
 			getobjectB("SPSubmit_button").click();
 		}
 	
+	@Test (priority=6)
+	public void VerifyPdf() throws InterruptedException
+		{
+			getobjectB("Pdficon").click();
+			this.Short(2);
+			
+			if(isElementPresent(By.id("notifications"))) // 
+			{System.out.println("!---- Pdf did not generate an error ----!"); }
+		else
+			{ System.out.println("!--- Something went wrong ---!");
+			Assert.fail();
+			}
+		}
+	
 //	@AfterTest
 //	public void closebrowser() throws InterruptedException
 //		{
@@ -115,6 +133,8 @@ public class ShoppingSpree extends TestBase
 		getobjectB("SPDelete1_icon").click();
 		this.Short(2);
 		getobjectB("SPDelete2_button").click();
+	
+		
 	}
 }
 

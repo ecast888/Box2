@@ -62,18 +62,18 @@ public class PwsShop extends TestBase
 		this.Short(2);
 		getpws("checkout_link").click();
 		
-		System.out.println("*****Check if login is required******");
+		System.out.println("!----- Check if login is required -----!");
 		
 		if(isElementPresent(By.xpath("//input[@id='username']"))) // check if log page appears
 				{
-			System.out.println("*****Turns out login is required******");
+			System.out.println("!----- Turns out login is required -----!");
 			getpws("Username_input").sendKeys(CONFIG.getProperty ("username"));
 			getpws("Password_input").sendKeys(CONFIG.getProperty ("password"));
 			getpws("Login_button").click();
 				}
 		else
 		{  
-			System.out.println("*****Login Not required******");
+			System.out.println("!----- Login Not required -----!");
 			//getpws("checkout_button").click();
 			getpws("continue_button").click();
 		}
@@ -82,6 +82,7 @@ public class PwsShop extends TestBase
 	@Test(priority=6, dependsOnMethods={"CheckOut"})
 	public void PayForOrders() throws InterruptedException
 	{
+		System.out.println("!----- Pay for Orders -----!");
 		getpws("AddPayment_button").click();
 		getpws("Continue_button2").click();
 		getpws("Finish_button").click();

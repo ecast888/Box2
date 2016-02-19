@@ -22,7 +22,7 @@ public class Enrollment_CA extends TestBase
 		public static String ssn = "114257787";
 		public static String address= "871 whitmore ave east";
 		public static String address2= "dauphin";
-		public static String zip= " r7n3b3";
+		public static String zip= " r7n 3b3";
 		
 		//public static String joincode="RECSHOP2500";
 		
@@ -93,13 +93,13 @@ public class Enrollment_CA extends TestBase
 	{
 		// Page 6: Details & Order summary, Payment info
 		this.Short(3);
-		getobject("CardHolderName[recruit]_input").clear();
-		getobject("CardHolderName[recruit]_input").sendKeys("Brown Ronello");
-		getobject("CardNumber[recruit]_input").clear();
-		getobject("CardNumber[recruit]_input").sendKeys("4030000010001234");
-		Select exp = new Select(dr.findElement(By.id("norwex_maxbundle_creditcardinfo_expiration_month")));
+		getobject("CardholderName").clear();
+		getobject("CardholderName").sendKeys("Brown Ronello");
+		getobject("CardNumber").clear();
+		getobject("CardNumber").sendKeys("4030000010001234");
+		Select exp = new Select(dr.findElement(By.id("norwex_maxbundle_creditcardprofile_expiration_month")));
 		exp.selectByIndex(6);
-		Select yr = new Select(dr.findElement(By.id("norwex_maxbundle_creditcardinfo_expiration_year")));
+		Select yr = new Select(dr.findElement(By.id("norwex_maxbundle_creditcardprofile_expiration_year")));
 		yr.selectByValue("2017");
 		getobject("Next[6]_button").click();
 	}

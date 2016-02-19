@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -46,7 +45,7 @@ public class CustomerOrder extends TestBase
 			getobjectB("CDEmail_input").sendKeys(email);
 			getobjectB("CDHomePhone_input").clear();
 			getobjectB("CDHomePhone_input").sendKeys(Homephone);
-			getobjectB("CDMobile_input").clear();
+			getobjectB("CDMobile_input").clear(); 
 			getobjectB("CDMobile_input").sendKeys(mobile);
 			getobjectB("CDAddress1_input").clear();
 			getobjectB("CDAddress1_input").sendKeys(address1);
@@ -55,10 +54,11 @@ public class CustomerOrder extends TestBase
 			getobjectB("CDZipCode_input").clear();
 			getobjectB("CDZipCode_input").sendKeys(zip);
 			getobjectB("CDZipSearch_button").click();
-			getobjectB("CDForceValidate").click();
-			getobjectB("CDNext_button").click();   	//proceed to next page
 			this.Short(2);
-			getobjectB("CDNext_button").click();
+			getobjectB("Alertbox_yes").click();
+			this.Short(2);
+			getobjectB("CDNext_button").click();   	//proceed to next page
+		
 		}
 	
 

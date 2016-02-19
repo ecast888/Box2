@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="9" failed="1" total="11" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="39268" started-at="2016-02-16T17:25:01Z" finished-at="2016-02-16T17:25:40Z">
+  <suite name="Default suite" duration-ms="41149" started-at="2016-02-19T21:03:05Z" finished-at="2016-02-19T21:03:46Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="39268" started-at="2016-02-16T17:25:01Z" finished-at="2016-02-16T17:25:40Z">
-      <class name="com.norwex.pws.PwsContactme">
-        <test-method status="PASS" signature="Authenticate()[pri:0, instance:com.norwex.pws.PwsContactme@73846619]" name="Authenticate" is-config="true" duration-ms="26583" started-at="2016-02-16T11:25:01Z" finished-at="2016-02-16T11:25:27Z">
+    <test name="Default test" duration-ms="41149" started-at="2016-02-19T21:03:05Z" finished-at="2016-02-19T21:03:46Z">
+      <class name="com.norwex.nco.A_Party">
+        <test-method status="PASS" signature="Authenticate()[pri:0, instance:com.norwex.nco.A_Party@4c583ecf]" name="Authenticate" is-config="true" duration-ms="20885" started-at="2016-02-19T15:03:05Z" finished-at="2016-02-19T15:03:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Authenticate -->
-        <test-method status="FAIL" signature="ContactForm()[pri:1, instance:com.norwex.pws.PwsContactme@73846619]" name="ContactForm" duration-ms="12641" started-at="2016-02-16T11:25:27Z" finished-at="2016-02-16T11:25:40Z">
+        <test-method status="PASS" signature="NavigateToPartyPage()[pri:1, instance:com.norwex.nco.A_Party@4c583ecf]" name="NavigateToPartyPage" duration-ms="223" started-at="2016-02-19T15:03:26Z" finished-at="2016-02-19T15:03:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigateToPartyPage -->
+        <test-method status="FAIL" signature="createParty()[pri:2, instance:com.norwex.nco.A_Party@4c583ecf]" name="createParty" duration-ms="19982" started-at="2016-02-19T15:03:26Z" finished-at="2016-02-19T15:03:46Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-	at com.norwex.pws.PwsContactme.ContactForm(PwsContactme.java:43)
+	at com.norwex.nco.A_Party.createParty(A_Party.java:60)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -45,8 +49,278 @@
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ContactForm -->
-      </class> <!-- com.norwex.pws.PwsContactme -->
+        </test-method> <!-- createParty -->
+        <test-method status="SKIP" signature="ConfirmShipping()[pri:3, instance:com.norwex.nco.A_Party@4c583ecf]" name="ConfirmShipping" duration-ms="0" started-at="2016-02-19T15:03:46Z" depends-on-methods="com.norwex.nco.A_Party.createParty" finished-at="2016-02-19T15:03:46Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method A_Party.ConfirmShipping()[pri:3, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method A_Party.ConfirmShipping()[pri:3, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ConfirmShipping -->
+        <test-method status="SKIP" signature="addGuests()[pri:4, instance:com.norwex.nco.A_Party@4c583ecf]" name="addGuests" duration-ms="0" started-at="2016-02-19T15:03:46Z" depends-on-methods="com.norwex.nco.A_Party.createParty" finished-at="2016-02-19T15:03:46Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method A_Party.addGuests()[pri:4, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method A_Party.addGuests()[pri:4, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addGuests -->
+        <test-method status="SKIP" signature="addGuestOrders()[pri:5, instance:com.norwex.nco.A_Party@4c583ecf]" name="addGuestOrders" duration-ms="0" started-at="2016-02-19T15:03:46Z" depends-on-methods="com.norwex.nco.A_Party.addGuests" finished-at="2016-02-19T15:03:46Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method A_Party.addGuestOrders()[pri:5, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method A_Party.addGuestOrders()[pri:5, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addGuestOrders -->
+        <test-method status="SKIP" signature="UpdateGuestOrders()[pri:6, instance:com.norwex.nco.A_Party@4c583ecf]" name="UpdateGuestOrders" duration-ms="0" started-at="2016-02-19T15:03:46Z" depends-on-methods="com.norwex.nco.A_Party.addGuestOrders" finished-at="2016-02-19T15:03:46Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method A_Party.UpdateGuestOrders()[pri:6, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method A_Party.UpdateGuestOrders()[pri:6, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UpdateGuestOrders -->
+        <test-method status="SKIP" signature="addHostOrder()[pri:7, instance:com.norwex.nco.A_Party@4c583ecf]" name="addHostOrder" duration-ms="0" started-at="2016-02-19T15:03:46Z" depends-on-methods="com.norwex.nco.A_Party.addGuestOrders" finished-at="2016-02-19T15:03:46Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method A_Party.addHostOrder()[pri:7, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method A_Party.addHostOrder()[pri:7, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addHostOrder -->
+        <test-method status="SKIP" signature="ReviewBookings()[pri:8, instance:com.norwex.nco.A_Party@4c583ecf]" name="ReviewBookings" duration-ms="0" started-at="2016-02-19T15:03:46Z" depends-on-methods="com.norwex.nco.A_Party.addHostOrder" finished-at="2016-02-19T15:03:46Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method A_Party.ReviewBookings()[pri:8, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method A_Party.ReviewBookings()[pri:8, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReviewBookings -->
+        <test-method status="SKIP" signature="FinalPayment()[pri:9, instance:com.norwex.nco.A_Party@4c583ecf]" name="FinalPayment" duration-ms="0" started-at="2016-02-19T15:03:46Z" depends-on-methods="com.norwex.nco.A_Party.ReviewBookings" finished-at="2016-02-19T15:03:46Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method A_Party.FinalPayment()[pri:9, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method A_Party.FinalPayment()[pri:9, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FinalPayment -->
+        <test-method status="SKIP" signature="HostPlanSummary()[pri:10, instance:com.norwex.nco.A_Party@4c583ecf]" name="HostPlanSummary" duration-ms="0" started-at="2016-02-19T15:03:46Z" depends-on-methods="com.norwex.nco.A_Party.ReviewBookings" finished-at="2016-02-19T15:03:46Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method A_Party.HostPlanSummary()[pri:10, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method A_Party.HostPlanSummary()[pri:10, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HostPlanSummary -->
+        <test-method status="SKIP" signature="VerifySummary()[pri:10, instance:com.norwex.nco.A_Party@4c583ecf]" name="VerifySummary" duration-ms="0" started-at="2016-02-19T15:03:46Z" depends-on-methods="com.norwex.nco.A_Party.HostPlanSummary" finished-at="2016-02-19T15:03:46Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method A_Party.VerifySummary()[pri:10, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method A_Party.VerifySummary()[pri:10, instance:com.norwex.nco.A_Party@4c583ecf] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifySummary -->
+      </class> <!-- com.norwex.nco.A_Party -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

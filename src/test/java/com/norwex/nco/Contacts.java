@@ -117,7 +117,7 @@ import org.testng.annotations.Test;
 			String newfirstname= getcon("firstname").getAttribute("value").toString();  /* use when getText() doesn't work */
 			
 			System.out.println("initial firstname: "+ " "+firstName); 
-			System.out.println("extractedA firstname: "+" "+newfirstname); 
+			System.out.println("extracted firstname: "+" "+newfirstname); 
 			
 			try{
 				Assert.assertEquals(newfirstname, firstName);

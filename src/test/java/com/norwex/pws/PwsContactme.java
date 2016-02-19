@@ -1,5 +1,6 @@
 package com.norwex.pws;
 import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -47,6 +48,7 @@ public class PwsContactme extends TestBase
 		//getpws("captcha").click();
 		getpws("submit").click();
 	}
+	
 	
 }
 

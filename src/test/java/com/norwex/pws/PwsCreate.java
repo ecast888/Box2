@@ -11,8 +11,8 @@ import com.norwex.nco.TestBase;
 
 	public class PwsCreate extends TestBase 
 	{
-	    public static String pwsfirstName = "Pamela";
-	    public static String pwslastName = "diaz";
+	    public static String pwsfirstName = "Deandre";
+	    public static String pwslastName = "Price";
 	    public static String password = "testing123";  
 	    public static String password2 = "testing123";
 	    public static String email = "Test"+rand+"@norwex.com";
@@ -33,8 +33,9 @@ import com.norwex.nco.TestBase;
 		public void SignUp() throws IOException, InterruptedException 
 		{   
 			dr.get(CONFIG.getProperty("PwsLoginPage"));
-			this.Short(2);
+			this.Short(5);
 			getpws("customerlogin").click();
+			this.Short(4);
 			getpws("CreateAccount_link").click();
 			getpws("FirstName_input").sendKeys(pwsfirstName);
 			getpws("LastName_input").sendKeys(pwslastName);
