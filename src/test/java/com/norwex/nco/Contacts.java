@@ -50,6 +50,7 @@ import org.testng.annotations.Test;
 				getcon("zipsearch_button").click();
 				this.Short(2);
 				getcon("confirmaddress").click();
+				this.Short(2);
 				getcon("sameasbilling_checkbox").click();
 				this.Short(2);
 				getcon("save_button").click();
