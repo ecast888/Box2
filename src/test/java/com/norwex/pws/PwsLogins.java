@@ -8,17 +8,21 @@ import org.testng.annotations.Test;
 import com.norwex.nco.TestBase; 
 import java.io.IOException;
 
-public class LoginOptions extends TestBase {
-
+public class PwsLogins extends TestBase
+{
+	PwsCreate m = new PwsCreate();
+	
 	@BeforeTest
 	public void Authenticate() throws IOException, InterruptedException 
 		{   
 		initialize();
 		//Util.pwsLogin(); 
 		dr.get(CONFIG.getProperty("PwsLoginPage"));
+
 		}
 	
-	//@Test (priority=1)
+	
+	@Test (priority=1)
 	public void ConsultantLogin() throws InterruptedException
 	{
 		WebElement next =dr.findElement(By.xpath("//*[@id='top-menu']/nav/section/ul/span/ul/li[2]/ul/li[3]/a"));
@@ -28,7 +32,8 @@ public class LoginOptions extends TestBase {
 		getobject("consultantid").sendKeys(CONFIG.getProperty ("ncousername"));
 		getobject("password").sendKeys(CONFIG.getProperty ("ncopassword"));
 		getobject("login").click();
-		if(isElementPresent(By.id("notifications"))) // check if alert box appears
+		
+		if(isElementPresent(By.xpath("//*[@id='notifications']/div/a[1]/span"))) // check if alert box appears
 		{
 		System.out.println("!---- Consultant Login successful ----!");
 		}
@@ -37,22 +42,21 @@ public class LoginOptions extends TestBase {
 		System.out.println("---- Consultant Login Failed! ----");
 		Assert.fail();
 		}
-	this.Short(2);
 	}
 	
-	
-	//@Test (priority=2)
+	@Test (priority=2)
 	public void CustomerLogin() throws InterruptedException
 	{
-		WebElement next =dr.findElement(By.xpath("//*[@id='top-menu']/nav/section/ul/span/ul/li[2]/ul/li[2]/a"));
-		JavascriptExecutor ns = (JavascriptExecutor)driver;
-		ns.executeScript("arguments[0].click();", next);
+		dr.get(CONFIG.getProperty("PwsLoginPage"));
+		WebElement tnext =dr.findElement(By.xpath("//*[@id='top-menu']/nav/section/ul/span/ul/li[2]/ul/li[2]/a"));
+		JavascriptExecutor tns = (JavascriptExecutor)driver;
+		tns.executeScript("arguments[0].click();", tnext);
 		
-		getobject("consultantid").sendKeys(CONFIG.getProperty ("ncousername"));
-		getobject("password").sendKeys(CONFIG.getProperty ("ncopassword"));
-		getobject("login").click();
+		getobject("consultantid").sendKeys(m.getUser());  // using getters and setters from a differenct class
+		getobject("password").sendKeys("testing123");
+		getpws("login").click();
 		
-		if(isElementPresent(By.id("shopnow"))) // check if alert box appears
+		if(isElementPresent(By.xpath("//*[@id='shopnow']/a"))) // check if alert box appears
 		{
 		System.out.println("!---- Customer Login successful ----!");
 		}

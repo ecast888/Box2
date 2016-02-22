@@ -14,6 +14,11 @@
     </classes>
   </test> 
   
+   <test name="Pws Logis">
+  <classes>
+      <class name="com.norwex.pws.PwsLogins" />
+    </classes>
+  </test> 
   <test name="Pws Shop">
   <classes>
       <class name="com.norwex.pws.PwsShop" />

@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 	    public static  String newpartyName ="Feb"+rand;
 	    	  
 		Menus m = new Menus();
-		//TestBase a = new TestBase();
+		
 		
 		
 	@BeforeTest

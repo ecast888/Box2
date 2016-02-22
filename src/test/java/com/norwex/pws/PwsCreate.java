@@ -20,7 +20,7 @@ import com.norwex.nco.TestBase;
 		public static String address= "2605 SW H ave";
 		public static String address2= "beside river creek";
 		public static String zip= "73505";
-		public static String newuser= email;
+		public  String newuser= email;
 		
 		@BeforeTest
 		public void Authenticate() throws IOException, InterruptedException 
@@ -51,6 +51,7 @@ import com.norwex.nco.TestBase;
 			getpws("AddressConfirm_button").click();
 			this.Short(3);
 			getpws("Submit_button").click();
+			System.out.println("pre status check ...");
 			
 			if(isElementPresent(By.xpath("//*[@id='search-all-products']"))) //
 			{
@@ -65,12 +66,16 @@ import com.norwex.nco.TestBase;
 				Assert.fail();
 			}
 	}
+		public void setUser(String userN)
+		{
+			newuser = userN;
+		}
+		public String getUser()
+		{
+			return newuser;
+		}
 		
-//		@AfterTest
-//		public void closebrowser() throws InterruptedException
-//			{
-//				//this.close(60);
-//			}
+
 		
 }
 

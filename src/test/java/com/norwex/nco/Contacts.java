@@ -56,6 +56,7 @@ import org.testng.annotations.Test;
 				getcon("save_button").click();
 				this.Short(2);
 				System.out.println("firstname : "+firstName);
+				System.out.println("next is element present: count from now");
 		} 
 	
 	@Test (priority =6, dependsOnMethods={"AddNewContact"})

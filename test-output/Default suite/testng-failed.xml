@@ -3,20 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.norwex.pws.PwsShop"/>
+      <class name="com.norwex.pws.PwsCreate"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="com.norwex.pws.PwsShop">
-        <methods>
-          <include name="DisplaySummary"/>
-          <include name="Authenticate"/>
-          <include name="OrderItems"/>
-          <include name="CheckOut"/>
-          <include name="PayForOrders"/>
-        </methods>
-      </class> <!-- com.norwex.pws.PwsShop -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -96,7 +96,7 @@ public class TestBase
 				if (CONFIG.getProperty("browser").equals("firefox")) {
 				dr = new FirefoxDriver(fp);
 				dr.manage().window().maximize();
-				dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+				dr.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 				
 				
 //				}else if (CONFIG.getProperty("browser").equals("chrome")) {
