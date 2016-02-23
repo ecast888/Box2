@@ -1,8 +1,6 @@
 package com.norwex.pws;
 import java.io.IOException;
-
 import com.norwex.pws.*;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -11,7 +9,6 @@ import org.testng.SkipException;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.norwex.nco.Menus;
 import com.norwex.nco.TestBase;
 
@@ -39,14 +36,25 @@ public class PwsShop extends TestBase
 	{
 		NavigateToShop();
 	}
+	
+	@Test(priority=4)
+	public void AttachToParty() throws InterruptedException
+	{
+		getpws("AddToParty").click();
+		Select con = new Select(driver.findElement(By.id("form_search")) );
+	    con.selectByVisibleText("Feb22155835");
+	    this.Short(15);
+	    System.out.println("Stopped process!.. ");
+	    this.Short(30);
+	}
 
-	@Test(priority=3)
+	@Test(priority=6)
 	public void OrderItems() throws InterruptedException
 	{
 		this.addProducts("Bottle Brush Sleeve", "Bottle Brush Sleeve", "Spirinetts", "Descaler", 1);
 	}
 
-	@Test(priority=4, dependsOnMethods={"OrderItems"})
+	@Test(priority=8, dependsOnMethods={"OrderItems"})
 	public void UpdateCart() throws InterruptedException
 	{
 		this.Short(2);
@@ -56,7 +64,7 @@ public class PwsShop extends TestBase
 		this.RemoveItem();
 	}
 	
-	@Test(priority=5, dependsOnMethods={"OrderItems"})
+	@Test(priority=10, dependsOnMethods={"OrderItems"})
 	public void CheckOut() throws InterruptedException
 	{
 		this.Short(2);
@@ -79,7 +87,7 @@ public class PwsShop extends TestBase
 		}
 	}
 	
-	@Test(priority=6, dependsOnMethods={"CheckOut"})
+	@Test(priority=12, dependsOnMethods={"CheckOut"})
 	public void PayForOrders() throws InterruptedException
 	{
 		System.out.println("!----- Pay for Orders -----!");
@@ -88,7 +96,7 @@ public class PwsShop extends TestBase
 		getpws("Finish_button").click();
 	}
 	
-	@Test(priority=7, dependsOnMethods={"PayForOrders"})
+	@Test(priority=14, dependsOnMethods={"PayForOrders"})
 	public void DisplaySummary()
 	 {
 		 String ProductSubtotal = dr.findElement(By.xpath("html/body/div[2]/div/div[5]/div[1]/div[2]/div[6]/div/div/div[2]/div/div[1]/div[2]")).getText();
@@ -179,7 +187,6 @@ public class PwsShop extends TestBase
 	 }
 	 
 	 private void Payment()
-
 	{
 		Select line1 = new Select(driver.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_month")));
 		line1.selectByVisibleText("Feb");

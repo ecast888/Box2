@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="69823" started-at="2016-02-22T20:45:17Z" finished-at="2016-02-22T20:46:27Z">
+  <suite name="Default suite" duration-ms="44239" started-at="2016-02-23T21:12:09Z" finished-at="2016-02-23T21:12:53Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="69823" started-at="2016-02-22T20:45:17Z" finished-at="2016-02-22T20:46:27Z">
-      <class name="com.norwex.pws.PwsCreate">
-        <test-method status="PASS" signature="Authenticate()[pri:0, instance:com.norwex.pws.PwsCreate@7c7b252e]" name="Authenticate" is-config="true" duration-ms="6141" started-at="2016-02-22T14:45:17Z" finished-at="2016-02-22T14:45:23Z">
+    <test name="Default test" duration-ms="44239" started-at="2016-02-23T21:12:09Z" finished-at="2016-02-23T21:12:53Z">
+      <class name="com.norwex.nco.Reports">
+        <test-method status="PASS" signature="Authenticate()[pri:0, instance:com.norwex.nco.Reports@4d5d943d]" name="Authenticate" is-config="true" duration-ms="19444" started-at="2016-02-23T15:12:09Z" finished-at="2016-02-23T15:12:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Authenticate -->
-        <test-method status="PASS" signature="SignUp()[pri:1, instance:com.norwex.pws.PwsCreate@7c7b252e]" name="SignUp" duration-ms="63666" started-at="2016-02-22T14:45:23Z" finished-at="2016-02-22T14:46:27Z">
+        <test-method status="PASS" signature="Navigate()[pri:1, instance:com.norwex.nco.Reports@4d5d943d]" name="Navigate" duration-ms="187" started-at="2016-02-23T15:12:29Z" finished-at="2016-02-23T15:12:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SignUp -->
-      </class> <!-- com.norwex.pws.PwsCreate -->
+        </test-method> <!-- Navigate -->
+        <test-method status="PASS" signature="ProductSales()[pri:3, instance:com.norwex.nco.Reports@4d5d943d]" name="ProductSales" duration-ms="11121" started-at="2016-02-23T15:12:29Z" finished-at="2016-02-23T15:12:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ProductSales -->
+        <test-method status="PASS" signature="CustomerSales()[pri:5, instance:com.norwex.nco.Reports@4d5d943d]" name="CustomerSales" duration-ms="6608" started-at="2016-02-23T15:12:40Z" finished-at="2016-02-23T15:12:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CustomerSales -->
+        <test-method status="PASS" signature="SkuReport()[pri:7, instance:com.norwex.nco.Reports@4d5d943d]" name="SkuReport" duration-ms="6862" started-at="2016-02-23T15:12:47Z" finished-at="2016-02-23T15:12:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SkuReport -->
+      </class> <!-- com.norwex.nco.Reports -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

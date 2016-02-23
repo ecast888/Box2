@@ -29,9 +29,14 @@ public class TestBase
 {				
 			//static DateFormat dateFormat = new SimpleDateFormat("yyMMDDHHmmss");  //yyMMDDHHmmss
 			//static DateFormat dateFormat = new SimpleDateFormat("ddHHmmss");  	//yyMMDDHHmmss  
-				static DateFormat dateFormat = new SimpleDateFormat("ddHHmm");  	 
+				static DateFormat dateFormat = new SimpleDateFormat("ddHHmmss");  	 
 			    static Date date = new Date();  
 			    public static String rand = dateFormat.format(date);
+			    
+			    static DateFormat tdateFormat = new SimpleDateFormat("mmhhdd");   // *trand	 
+			    static Date tdate = new Date();  
+			    public static String trand = dateFormat.format(tdate);
+			    
 			// Initializing the property file reading
 				public static Properties CONFIG=null;
 				public static ProfilesIni prof= new ProfilesIni();
@@ -42,6 +47,7 @@ public class TestBase
 				public static Properties emp=null;
 				public static Properties enro=null;
 				public static Properties con =null;
+				public static Properties rep =null;
 				public static WebDriver dr=null;
 				public static WebDriverWait drive=null;
 				public static EventFiringWebDriver driver=null;
@@ -87,6 +93,10 @@ public class TestBase
 				con = new Properties();
 				fn = new FileInputStream(System.getProperty("user.dir")+ "//src//test//java//config//contact.properties");
 				con.load(fn);
+       //party order properties
+				rep = new Properties();
+				fn = new FileInputStream(System.getProperty("user.dir")+ "//src//test//java//config//reports.properties");
+				rep.load(fn);
 				
 				
 				
@@ -153,6 +163,14 @@ public class TestBase
 					return null;
 				}
 			}	
+		
+		public static WebElement getrep(Object xpathKey){
+			try{
+				return dr.findElement(By.xpath(rep.getProperty((String) xpathKey)));
+				}catch(Throwable t){
+				return null;
+			}
+		}
 			
 		public static WebElement getemp(Object xpathKey){
 			try{

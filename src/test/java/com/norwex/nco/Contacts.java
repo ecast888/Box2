@@ -2,10 +2,8 @@ package com.norwex.nco;
 import com.norwex.logins.*;
 import com.norwex.nco.Menus;
 import com.thoughtworks.selenium.webdriven.commands.IsTextPresent;
-
 import java.awt.AWTException;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -13,7 +11,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
  
  public class Contacts extends TestBase
- 
  {
 	   // # Declare variables for *this class only
 	 
@@ -34,7 +31,7 @@ import org.testng.annotations.Test;
 	@Test(priority =1, description="Navigates to the User Settings page")
 	public void Navigate() throws InterruptedException
 		{
-			this.Short(2);
+			//this.Short(2);
 			m.addcontactpage();
 		}
 	@Test(priority =3)
@@ -125,7 +122,7 @@ import org.testng.annotations.Test;
 				Assert.assertEquals(newfirstname, firstName);
 				}catch(Throwable t){
 		    	System.out.println("name match was NOT sucessful");
-		    	Assert.fail(); // If initial condition is not met, fail the test
+		    	Assert.fail();                    // If initial condition is not met, fail the test
 		    	System.out.println("nextline");  // * nextline should not display in console
 				}
 				System.out.println("Name match found"); 
@@ -153,13 +150,6 @@ import org.testng.annotations.Test;
 			Assert.fail();
 			}
  		}
-	
-//	//@AfterTest
-//	public void closebrowser() throws InterruptedException
-//		{
-//			this.close(15);
-//		}
-	
  }
  
  

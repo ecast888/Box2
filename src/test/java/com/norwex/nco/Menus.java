@@ -29,6 +29,16 @@ public class Menus extends TestBase
 		action.moveToElement(menu).perform();  
 		action.click(submenu).perform();
 	}
+	
+	public void CustomerReports()
+	{
+		WebElement menu= dr.findElement(By.xpath("//a[contains(text(), 'My Business')]"));
+		WebElement submenu= dr.findElement(By.xpath("//a[contains(text(), 'Customer Reports')]"));
+		Actions action = new Actions(dr);
+		action.moveToElement(menu).perform();  
+		action.click(submenu).perform();
+	}
+	
 	/***************************************** CONTACTS **********************************************/
 	public void addcontactpage()
 	{

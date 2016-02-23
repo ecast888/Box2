@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 	    private static String zipcodeInput="75080";
 	    private static String cellPhone = "5155551155", cellPhone2= "8131154112";
 	    private static String partyName = "Feb"+rand; 
-	    public static  String newpartyName ="Feb"+rand;
+	    public static  String newpartyName ="Feb"+trand;
 	    	  
 		Menus m = new Menus();
 		
@@ -415,7 +415,6 @@ import org.testng.annotations.Test;
 		this.Short(2);
 		getobject("Save").click();
 	}
-	
 }	
 	
 	
