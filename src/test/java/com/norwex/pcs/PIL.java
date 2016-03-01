@@ -1,16 +1,13 @@
 package com.norwex.pcs;
 import java.io.IOException;
-
 import com.norwex.logins.*;
-
 import org.openqa.selenium.By;
-import org.testng.annotations.AfterTest;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.Assert;
-
 import com.norwex.nco.Menus;
 import com.norwex.nco.TestBase;
+
 
 public class PIL extends TestBase 
 {
@@ -52,11 +49,28 @@ public class PIL extends TestBase
 			this.Short(3);
 			this.Remove();
 		}
-	
+
 	@Test (priority=6)
+	private void PayWithCredit() throws InterruptedException
+	{
+		this.Short(2);
+		Select con =  new Select(dr.findElement(By.id("norwex_maxbundle_payment_paymentmethod")));
+		con.selectByVisibleText("Credit Card"); 
+		
+		Select m =  new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_month")));
+		m.selectByVisibleText("Jan"); 
+		
+		Select yr = new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_year")));
+		yr.selectByVisibleText("2017"); 
+		
+		this.Short(2);
+		getobject("Add_button2").click();
+	}
+	
+	@Test (priority=7)
 	public void CompleteOrder()
 		{
-			getobjectB("PIAdd_button2").click();
+			//getobjectB("PIAdd_button2").click();
 			getobjectB("PINext_button").click();
 			getobjectB("PISubmit_button").click();
 		}
@@ -91,11 +105,8 @@ public class PIL extends TestBase
 	   String AmtDueNorwex = dr.findElement(By.xpath("html/body/div[2]/div/div[5]/div[6]/div[1]/div[2]/div[2]/div[8]/div[2]"))
 			   .getText().replaceAll("[^0-9.]", "");
 	   System.out.println("Amount Due Norwex : "+AmtDueNorwex);
+	   
    }
-	
-	
-	
-
 	
 /******************************************************************************************************
 *********************************** Service Methods ***************************************************
@@ -129,6 +140,5 @@ public class PIL extends TestBase
 		this.Short(2);
 		getobjectB("PIDelete2_button").click();
 	}
-	
 	
 }

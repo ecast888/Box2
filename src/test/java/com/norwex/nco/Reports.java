@@ -35,7 +35,7 @@ import com.norwex.logins.*;
 		getrep("viewreport").click();
 		this.Short(3);
 		
-			if(dr.getPageSource().contains("Dish Cloth - Blue"))
+			if(dr.getPageSource().contains("Total Sales"))
 			{
 				System.out.println("!--- Product sale report generated ---!");
 			}
@@ -49,7 +49,6 @@ import com.norwex.logins.*;
 	@Test(priority=5)
 	public void CustomerSales() throws InterruptedException
 		{
-		 
 		Select con = new Select(getrep("reportdropdown"));
 	    con.selectByVisibleText("Top Customer Sales"); 
 		Select lang = new Select(getrep("datedropdown"));
@@ -91,9 +90,6 @@ import com.norwex.logins.*;
 				Assert.fail();
 			}
 		} 
-	
-	
-
  }
  
  

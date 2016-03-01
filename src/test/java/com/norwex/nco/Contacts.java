@@ -31,7 +31,7 @@ import org.testng.annotations.Test;
 	@Test(priority =1, description="Navigates to the User Settings page")
 	public void Navigate() throws InterruptedException
 		{
-			//this.Short(2);
+			this.Short(5);
 			m.addcontactpage();
 		}
 	@Test(priority =3)
@@ -128,7 +128,7 @@ import org.testng.annotations.Test;
 				System.out.println("Name match found"); 
  		}
  
-	@Test (priority =15,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
+	//@Test (priority =15,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
  	public void Contactdelete() throws InterruptedException, AWTException
  		{
 	 		this.backspace();

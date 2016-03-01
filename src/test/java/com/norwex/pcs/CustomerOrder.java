@@ -32,6 +32,7 @@ public class CustomerOrder extends TestBase
 	@Test (priority=1)
 	public void NavigateToShoppingSpree() throws InterruptedException
 		{
+			this.Short(5);
 			m.custormerorder();
 		}
 	@Test (priority=2)
@@ -116,6 +117,7 @@ public class CustomerOrder extends TestBase
 	/******************************************************************************************************
 	*********************************** Service Methods ***************************************************
 	*******************************************************************************************************/
+	
 	public void AddProduct(String item, int i) throws InterruptedException
 	{
 		getobject("SearchItem_input").clear();
@@ -126,7 +128,6 @@ public class CustomerOrder extends TestBase
 		getobject("Add_button").click();   // from OR1.properties
 		this.Short(1);
 	}
-	
 	public void EditQuantity(int i)
 	{
 		getobjectB("SPEdit_icon").click();
@@ -134,7 +135,6 @@ public class CustomerOrder extends TestBase
 		getobjectB("SPChangeQty_input").sendKeys(String.valueOf(i));
 		getobjectB("SPUpdate_button").click();
 	}
-	
 	public void RemoveItem()
 	{
 		getobjectB("SPDelete1_icon").click();
@@ -146,8 +146,15 @@ public class CustomerOrder extends TestBase
 	private void PayWithCredit() throws InterruptedException
 	{
 		this.Short(2);
-		Select con = new Select(getobject("PaymentMethod_dropdown"));
+		Select con =  new Select(dr.findElement(By.id("norwex_maxbundle_payment_paymentmethod")));
 		con.selectByVisibleText("Credit Card"); 
+		
+		Select m =  new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_month")));
+		m.selectByVisibleText("Jan"); 
+		
+		Select yr = new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_year")));
+		yr.selectByVisibleText("2017"); 
+		
 		this.Short(2);
 		getobject("Add_button2").click();
 	}
@@ -160,7 +167,6 @@ public class CustomerOrder extends TestBase
 		WebElement Addbutton =dr.findElement(By.id("norwex_maxbundle_payment_submit"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();", Addbutton);
-		
 	}
 	
 	

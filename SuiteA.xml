@@ -31,6 +31,12 @@
       <class name="com.norwex.nco.Financial" />
     </classes>
   </test> 
+  
+    <test name="Reports">
+    <classes>
+      <class name="com.norwex.nco.Reports" />
+    </classes>
+  </test> 
  </suite>
  
 

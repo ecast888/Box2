@@ -37,7 +37,7 @@ public class PwsShop extends TestBase
 		NavigateToShop();
 	}
 	
-	@Test(priority=4)
+	//@Test(priority=4)
 	public void AttachToParty() throws InterruptedException
 	{
 		getpws("AddToParty").click();

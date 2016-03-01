@@ -1,11 +1,15 @@
 package com.norwex.nco;
 import com.norwex.logins.*;
+
 import java.io.IOException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import com.norwex.nco.TestBase;
 
 
@@ -39,7 +43,10 @@ public class Enrollment_CA extends TestBase
 	public void SignUp() throws InterruptedException
 	{
 		// Initialize mouse hovering
+		this.Short(4);
 		m.enrollmentpage();
+		
+		
 		
 		// Page 1: Country, language and JoinCode
 		Select con = new Select(getobject("Country"));

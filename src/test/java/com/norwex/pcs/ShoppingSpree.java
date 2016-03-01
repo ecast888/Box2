@@ -2,9 +2,7 @@ package com.norwex.pcs;
 import com.norwex.nco.Menus;
 import com.norwex.nco.TestBase;
 import com.norwex.logins.Util;
-
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -92,18 +90,13 @@ public class ShoppingSpree extends TestBase
 			this.Short(2);
 			
 			if(isElementPresent(By.id("notifications"))) // 
-			{System.out.println("!---- Pdf did not generate an error ----!"); }
+			{System.out.println("!---- No app error on PDF ----!"); }
 		else
 			{ System.out.println("!--- Something went wrong ---!");
 			Assert.fail();
 			}
 		}
-	
-//	@AfterTest
-//	public void closebrowser() throws InterruptedException
-//		{
-//			//this.close(15);
-//		}
+
 
 	/******************************************************************************************************
 	*********************************** Service Methods ***************************************************
@@ -133,8 +126,6 @@ public class ShoppingSpree extends TestBase
 		getobjectB("SPDelete1_icon").click();
 		this.Short(2);
 		getobjectB("SPDelete2_button").click();
-	
-		
 	}
 }
 
