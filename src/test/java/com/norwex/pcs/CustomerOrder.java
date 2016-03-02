@@ -31,7 +31,7 @@ public class CustomerOrder extends TestBase
 		}
 	@Test (priority=1)
 	public void NavigateToShoppingSpree() throws InterruptedException
-		{
+		{ 
 			this.Short(5);
 			m.custormerorder();
 		}

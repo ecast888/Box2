@@ -48,7 +48,7 @@ public class Enrollment_US extends TestBase
 		
 		//  Certify am over 18 and add join code
 		
-		getobject("JoinCode_input").sendKeys(joincode);
+		//getobject("JoinCode_input").sendKeys(joincode);
 		this.Short(1);
 		getenro("Certify_checkbox").click();
 		this.Short(1);

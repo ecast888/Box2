@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class PwsLogins extends TestBase
 {
-	PwsCreate m = new PwsCreate();
+	PwsCreate newid = new PwsCreate();
 	
 	@BeforeTest
 	public void Authenticate() throws IOException, InterruptedException 
@@ -52,7 +52,10 @@ public class PwsLogins extends TestBase
 		JavascriptExecutor tns = (JavascriptExecutor)driver;
 		tns.executeScript("arguments[0].click();", tnext);
 		
-		getobject("consultantid").sendKeys(m.getUser());  // using getters and setters from a differenct class
+		System.out.println("extracted user: "+newid.getUser());
+		
+		getobject("consultantid").sendKeys(newid.getUser());  // using getters and setters from a pws create class
+		this.Short(4);
 		getobject("password").sendKeys("testing123");
 		getpws("login").click();
 		

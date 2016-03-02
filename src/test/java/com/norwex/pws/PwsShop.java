@@ -23,6 +23,7 @@ public class PwsShop extends TestBase
 		{   
 			initialize();
 			//TestUtility.pwsLogin();
+			dr.get(CONFIG.getProperty("PwsLoginPage"));
 		}
 	
 	@Test(priority=1)
@@ -51,7 +52,7 @@ public class PwsShop extends TestBase
 	@Test(priority=6)
 	public void OrderItems() throws InterruptedException
 	{
-		this.addProducts("Bottle Brush Sleeve", "Bottle Brush Sleeve", "Spirinetts", "Descaler", 1);
+		this.addProducts("Blue Diamond", "Window Cloth", "EnviroCloth® Graphite", "Descaler", 1);
 	}
 
 	@Test(priority=8, dependsOnMethods={"OrderItems"})
@@ -140,36 +141,36 @@ public class PwsShop extends TestBase
 
 		private void addProducts( String item1, String item2, String item3, String item4, int i) throws InterruptedException
 			{
-			System.out.println("*****Adding products******");
+			System.out.println("!--- Adding products ---!");
 			getpws("SearchItem_input").clear();
 			getpws("SearchItem_input").sendKeys(item1);    // item1
-			this.tab();	this.tab();	this.tab();
+			this.tab();	this.tab();	this.tab(); this.tab();
 			this.enter();
 			this.Short(2);
 			
 			getpws("SearchItem_input").clear();
 			getpws("SearchItem_input").sendKeys(item2);    // item2
-			this.tab();	this.tab();	this.tab();
+			this.tab();	this.tab();	this.tab(); this.tab();
 			this.enter();
 			this.Short(2);
 		
 			getpws("SearchItem_input").clear();
 			getpws("SearchItem_input").sendKeys(item3);    // item3
-			this.tab();	this.tab();	this.tab();
+			this.tab();	this.tab();	this.tab(); this.tab();
 			this.enter();
 			this.Short(2);
 			
 
 			getpws("SearchItem_input").clear();
 			getpws("SearchItem_input").sendKeys(item4);    // item4
-			this.tab();	this.tab();	this.tab();
+			this.tab();	this.tab();	this.tab(); this.tab();
 			this.enter();
 			this.Short(2);
 			}
 		
 	 private void UpdateItem(int i) throws InterruptedException
 	 {
-		 System.out.println("****Updating Items******");
+		 System.out.println("!--- Updating Items ---!");
 		 getpws("Edit_icon").click();
 		 
 		 getpws("EditQty_input").clear();
@@ -180,7 +181,7 @@ public class PwsShop extends TestBase
 
 	 private void RemoveItem() throws InterruptedException
 	 {
-		 System.out.println("*****Deleting Items******");
+		 System.out.println("!--- Deleting Items ---!");
 		 getpws("Delete_icon").click();
 		 this.Short(1);
 		 getpws("ConfirmDelete_button").click();

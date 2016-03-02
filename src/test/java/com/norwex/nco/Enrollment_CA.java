@@ -100,10 +100,10 @@ public class Enrollment_CA extends TestBase
 	{
 		// Page 6: Details & Order summary, Payment info
 		this.Short(3);
-		getpws("CardholderName").clear();
-		getpws("CardholderName").sendKeys("Brown Ronello");
-		getpws("CardNumber").clear();
-		getpws("CardNumber").sendKeys("4030000010001234");
+		//getpws("CardholderName").clear();
+		dr.findElement(By.id("norwex_maxbundle_creditcardprofile_nameoncard")).clear();
+		dr.findElement(By.id("norwex_maxbundle_creditcardprofile_nameoncard")).sendKeys("Brown Ronelo");
+		
 		Select exp = new Select(dr.findElement(By.id("norwex_maxbundle_creditcardprofile_expiration_month")));
 		exp.selectByIndex(6);
 		Select yr = new Select(dr.findElement(By.id("norwex_maxbundle_creditcardprofile_expiration_year")));

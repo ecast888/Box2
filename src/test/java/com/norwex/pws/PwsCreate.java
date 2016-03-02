@@ -26,16 +26,15 @@ import com.norwex.nco.TestBase;
 		public void Authenticate() throws IOException, InterruptedException 
 			{   
 			initialize();
-			//Util.pwsLogin(); 
+			dr.get(CONFIG.getProperty("PwsLoginPage"));
 			}
 		
 		@Test (priority =1)
 		public void SignUp() throws IOException, InterruptedException 
 		{   
-			dr.get(CONFIG.getProperty("PwsLoginPage"));
-			this.Short(5);
+			this.Short(3);
 			getpws("customerlogin").click();
-			this.Short(4);
+			this.Short(3);
 			getpws("CreateAccount_link").click();
 			getpws("FirstName_input").sendKeys(pwsfirstName);
 			getpws("LastName_input").sendKeys(pwslastName);

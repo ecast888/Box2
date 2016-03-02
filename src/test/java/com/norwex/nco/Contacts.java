@@ -128,7 +128,7 @@ import org.testng.annotations.Test;
 				System.out.println("Name match found"); 
  		}
  
-	//@Test (priority =15,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
+	@Test (priority =15,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
  	public void Contactdelete() throws InterruptedException, AWTException
  		{
 	 		this.backspace();

@@ -33,7 +33,7 @@ public class PIL extends TestBase
 			this.Short(3);
 			this.refresh();
 			this.AddProduct("1120", 1); // Dryer balls
-			this.AddProduct("357053", 1);
+			this.AddProduct("357053", 2);
 			this.AddProduct("1000", 1); //  Dish Cloth - White - $9.99
 			this.refresh();
 		}
