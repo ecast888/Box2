@@ -1,7 +1,9 @@
 package com.norwex.pcs;
 import com.norwex.nco.*;
 import com.norwex.logins.*;
+
 import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -20,7 +22,6 @@ public class CustomerOrder extends TestBase
 		private static String address1= "2001 Oriental Blvd";
 		private static String address2= "Apt 89a";
 		private static String zip = "11235";
-		
 		Menus m = new Menus();
 		 
 	@BeforeTest ()
@@ -30,9 +31,9 @@ public class CustomerOrder extends TestBase
 			Util.ncoLogin();
 		}
 	@Test (priority=1)
-	public void NavigateToShoppingSpree() throws InterruptedException
+	public void Navigate() throws InterruptedException
 		{ 
-			this.Short(5);
+			this.Short(4);
 			m.custormerorder();
 		}
 	@Test (priority=2)
@@ -59,7 +60,6 @@ public class CustomerOrder extends TestBase
 			getobjectB("Alertbox_yes").click();
 			this.Short(2);
 			getobjectB("CDNext_button").click();   	//proceed to next page
-		
 		}
 	
 
@@ -85,16 +85,18 @@ public class CustomerOrder extends TestBase
 		this.Short(2);
 		}
 	@Test (priority=5)
-	public void EditOrders()
+	public void EditOrders() throws InterruptedException
 		{   
-			this.EditQuantity(1);
-			this.RemoveItem();
+		this.refresh();
+		this.EditQuantity(1);
+		this.RemoveItem();
 		}
 	
 	@Test (priority= 6)
 	public void SubmitPayment() throws InterruptedException
 		{
-			this.PayWithCredit();
+		this.refresh();
+		this.PayWithCredit();
 		}
 	
 

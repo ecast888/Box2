@@ -61,8 +61,9 @@ public class ShoppingSpree extends TestBase
 	@Test (priority=2)
 	public void AddOrders() throws InterruptedException
 		{
-		this.AddProduct("1002 - Blue  Dish Cloth - Blue - $9.99", 1);
-		this.AddProduct("354000 - Spray Bottle - $6.99", 2);
+		this.AddProduct("1002", 1);
+		this.AddProduct("354000", 2);
+		this.AddProduct("1515", 2);
 		this.refresh();
 		}
 	@Test (priority=4)

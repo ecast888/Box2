@@ -32,9 +32,9 @@ import com.norwex.nco.TestBase;
 		@Test (priority =1)
 		public void SignUp() throws IOException, InterruptedException 
 		{   
-			this.Short(3);
+			this.Short(2);
 			getpws("customerlogin").click();
-			this.Short(3);
+			this.Short(1);
 			getpws("CreateAccount_link").click();
 			getpws("FirstName_input").sendKeys(pwsfirstName);
 			getpws("LastName_input").sendKeys(pwslastName);
@@ -46,9 +46,9 @@ import com.norwex.nco.TestBase;
 			getpws("Address2_input").sendKeys(address2);
 			getpws("Zip_input").sendKeys(zip);
 			getpws("Search_button").click();
-			this.Short(3);
+			this.Short(2);
 			getpws("AddressConfirm_button").click();
-			this.Short(3);
+			this.Short(2);
 			getpws("Submit_button").click();
 			System.out.println("pre status check ...");
 			
