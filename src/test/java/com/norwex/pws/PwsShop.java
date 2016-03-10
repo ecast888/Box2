@@ -16,7 +16,7 @@ import com.norwex.nco.TestBase;
 
 public class PwsShop extends TestBase 
 {
-	PwsCreate p = new PwsCreate();
+	PwsBasics p = new PwsBasics();
 	
 	@BeforeTest
 	public void Authenticate() throws IOException, InterruptedException 
@@ -29,8 +29,7 @@ public class PwsShop extends TestBase
 	@Test(priority=1)
 	public void SetAccount() throws InterruptedException, IOException
 	{
-		p.SignUp();
-		//this.Short(15);
+		p.CreateAccount();
 	}
 	
 	@Test(priority=2)

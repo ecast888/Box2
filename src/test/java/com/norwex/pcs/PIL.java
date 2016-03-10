@@ -58,8 +58,7 @@ public class PIL extends TestBase
 		con.selectByVisibleText("Credit Card"); 
 		
 		Select m =  new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_month")));
-		m.selectByVisibleText("Jan"); 
-		
+		m.selectByIndex(5);
 		Select yr = new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_year")));
 		yr.selectByVisibleText("2017"); 
 		

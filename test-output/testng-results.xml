@@ -1,45 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="7" passed="7">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="140786" started-at="2016-03-09T22:06:27Z" finished-at="2016-03-09T22:08:48Z">
+  <suite name="Default suite" duration-ms="89313" started-at="2016-03-10T18:04:12Z" finished-at="2016-03-10T18:05:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="140786" started-at="2016-03-09T22:06:27Z" finished-at="2016-03-09T22:08:48Z">
-      <class name="com.norwex.pcs.CustomerOrder">
-        <test-method status="PASS" signature="Authenticate()[pri:0, instance:com.norwex.pcs.CustomerOrder@73846619]" name="Authenticate" is-config="true" duration-ms="20612" started-at="2016-03-09T16:06:27Z" finished-at="2016-03-09T16:06:48Z">
+    <test name="Default test" duration-ms="89313" started-at="2016-03-10T18:04:12Z" finished-at="2016-03-10T18:05:42Z">
+      <class name="com.norwex.pws.PwsCreate">
+        <test-method status="PASS" signature="Authenticate()[pri:0, instance:com.norwex.pws.PwsCreate@73846619]" name="Authenticate" is-config="true" duration-ms="19791" started-at="2016-03-10T12:04:12Z" finished-at="2016-03-10T12:04:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Authenticate -->
-        <test-method status="PASS" signature="Navigate()[pri:1, instance:com.norwex.pcs.CustomerOrder@73846619]" name="Navigate" duration-ms="4126" started-at="2016-03-09T16:06:48Z" finished-at="2016-03-09T16:06:52Z">
+        <test-method status="PASS" signature="CreateAccount()[pri:1, instance:com.norwex.pws.PwsCreate@73846619]" name="CreateAccount" duration-ms="29675" started-at="2016-03-10T12:04:32Z" finished-at="2016-03-10T12:05:02Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Navigate -->
-        <test-method status="PASS" signature="UpdateContactInfo()[pri:2, instance:com.norwex.pcs.CustomerOrder@73846619]" name="UpdateContactInfo" duration-ms="16352" started-at="2016-03-09T16:06:52Z" finished-at="2016-03-09T16:07:08Z">
+        </test-method> <!-- CreateAccount -->
+        <test-method status="PASS" signature="ConsultantLogin()[pri:2, instance:com.norwex.pws.PwsCreate@73846619]" name="ConsultantLogin" duration-ms="15664" started-at="2016-03-10T12:05:02Z" finished-at="2016-03-10T12:05:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- UpdateContactInfo -->
-        <test-method status="PASS" signature="AddOrders()[pri:4, instance:com.norwex.pcs.CustomerOrder@73846619]" name="AddOrders" duration-ms="20450" started-at="2016-03-09T16:07:08Z" finished-at="2016-03-09T16:07:29Z">
+        </test-method> <!-- ConsultantLogin -->
+        <test-method status="PASS" signature="CustomerLogin()[pri:3, instance:com.norwex.pws.PwsCreate@73846619]" name="CustomerLogin" duration-ms="24124" started-at="2016-03-10T12:05:17Z" finished-at="2016-03-10T12:05:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddOrders -->
-        <test-method status="PASS" signature="EditOrders()[pri:5, instance:com.norwex.pcs.CustomerOrder@73846619]" name="EditOrders" duration-ms="23073" started-at="2016-03-09T16:07:29Z" finished-at="2016-03-09T16:07:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EditOrders -->
-        <test-method status="PASS" signature="SubmitPayment()[pri:6, instance:com.norwex.pcs.CustomerOrder@73846619]" name="SubmitPayment" duration-ms="18612" started-at="2016-03-09T16:07:52Z" finished-at="2016-03-09T16:08:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SubmitPayment -->
-        <test-method status="PASS" signature="DeletePay()[pri:7, instance:com.norwex.pcs.CustomerOrder@73846619]" name="DeletePay" duration-ms="31080" started-at="2016-03-09T16:08:11Z" finished-at="2016-03-09T16:08:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeletePay -->
-        <test-method status="PASS" signature="CompleteOrder()[pri:8, instance:com.norwex.pcs.CustomerOrder@73846619]" name="CompleteOrder" duration-ms="6459" started-at="2016-03-09T16:08:42Z" finished-at="2016-03-09T16:08:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CompleteOrder -->
-      </class> <!-- com.norwex.pcs.CustomerOrder -->
+        </test-method> <!-- CustomerLogin -->
+      </class> <!-- com.norwex.pws.PwsCreate -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
