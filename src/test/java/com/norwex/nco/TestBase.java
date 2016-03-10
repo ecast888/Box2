@@ -1,6 +1,5 @@
 package com.norwex.nco;
 import java.awt.AWTException;
-
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
@@ -29,6 +28,7 @@ public class TestBase
 {				
 			//static DateFormat dateFormat = new SimpleDateFormat("yyMMDDHHmmss");  //yyMMDDHHmmss
 			//static DateFormat dateFormat = new SimpleDateFormat("ddHHmmss");  	//yyMMDDHHmmss  
+	
 				static DateFormat dateFormat = new SimpleDateFormat("ddHHmmss");  	 
 			    static Date date = new Date();  
 			    public static String rand = dateFormat.format(date);
@@ -106,13 +106,13 @@ public class TestBase
 				if (CONFIG.getProperty("browser").equals("firefox")) {
 				dr = new FirefoxDriver(fp);
 				dr.manage().window().maximize();
-				dr.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+				dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				
 				
-//				}else if (CONFIG.getProperty("browser").equals("chrome")) {
-//					System.setProperty("webdriver.chrome.driver", "C://Wspace//chromedriver.exe");
-//					 dr = new ChromeDriver();
-//					 dr.manage().window().maximize(); 
+				}else if (CONFIG.getProperty("browser").equals("chrome")) {
+					System.setProperty("webdriver.chrome.driver", "C://Wspace//chromedriver.exe");
+					 dr = new ChromeDriver();
+					 dr.manage().window().maximize(); 
 				}
 		// 	load the suite1 sheet
 				datatable = new Xls_Reader(System.getProperty("user.dir")+"//src//test//java//datatable//Controller.xlsx");

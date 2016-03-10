@@ -28,12 +28,14 @@ import org.testng.annotations.Test;
 			initialize();
 			Util.ncoLogin();
 		}
+	
 	@Test(priority =1, description="Navigates to the User Settings page")
 	public void Navigate() throws InterruptedException
 		{
 			this.Short(5);
 			m.addcontactpage();
 		}
+	
 	@Test(priority =3)
 	public void AddNewContact() throws InterruptedException
 		{

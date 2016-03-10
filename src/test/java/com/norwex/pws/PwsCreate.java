@@ -20,18 +20,21 @@ import com.norwex.nco.TestBase;
 		public static String address= "2605 SW H ave";
 		public static String address2= "beside river creek";
 		public static String zip= "73505";
-		public  String newuser= email;
+		public static String newuser= email;
 		
 		@BeforeTest
 		public void Authenticate() throws IOException, InterruptedException 
 			{   
 			initialize();
+			this.Short(2);
 			dr.get(CONFIG.getProperty("PwsLoginPage"));
 			}
 		
 		@Test (priority =1)
 		public void SignUp() throws IOException, InterruptedException 
 		{   
+		
+			//this.refresh();
 			this.Short(2);
 			getpws("customerlogin").click();
 			this.Short(1);

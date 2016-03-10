@@ -59,7 +59,7 @@ public class PwsLogins extends TestBase
 		getobject("password").sendKeys("testing123");
 		getpws("login").click();
 		
-		if(isElementPresent(By.xpath("//*[@id='shopnow']/a"))) // check if alert box appears
+		if(isElementPresent(By.xpath("//*[@id='topbarmenu']/section/ul/span/ul/li/a"))) // check if alert box appears
 		{
 		System.out.println("!---- Customer Login successful ----!");
 		}

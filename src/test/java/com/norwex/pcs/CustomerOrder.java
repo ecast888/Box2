@@ -128,7 +128,7 @@ public class CustomerOrder extends TestBase
 		getobject("Quantity_input").sendKeys(String.valueOf(i)); 
 		this.Short(1);   
 		getobject("Add_button").click();   // from OR1.properties
-		this.Short(1);
+		this.Short(2);
 	}
 	public void EditQuantity(int i)
 	{
@@ -152,8 +152,7 @@ public class CustomerOrder extends TestBase
 		con.selectByVisibleText("Credit Card"); 
 		
 		Select m =  new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_month")));
-		m.selectByVisibleText("Jan"); 
-		
+		m.selectByIndex(5);
 		Select yr = new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_year")));
 		yr.selectByVisibleText("2017"); 
 		
@@ -165,6 +164,7 @@ public class CustomerOrder extends TestBase
 	{
 		Select con = new Select(getobject("CDPaymentdropdown"));
 		con.selectByIndex(1);
+	
 		this.Short(2);
 		WebElement Addbutton =dr.findElement(By.id("norwex_maxbundle_payment_submit"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;

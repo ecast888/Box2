@@ -30,6 +30,7 @@ public class PwsShop extends TestBase
 	public void SetAccount() throws InterruptedException, IOException
 	{
 		p.SignUp();
+		//this.Short(15);
 	}
 	
 	@Test(priority=2)
@@ -47,12 +48,14 @@ public class PwsShop extends TestBase
 	    this.Short(15);
 	    System.out.println("Stopped process!.. ");
 	    this.Short(30);
+	   
 	}
 
 	@Test(priority=6)
 	public void OrderItems() throws InterruptedException
 	{
-		this.addProducts("Blue Diamond", "Window Cloth", "Bath Mat", "Descaler", 1);
+		dr.findElement(By.xpath("//*[@id='OrderHeader']/div[1]/div[1]/ul/li[12]/a")).click();
+		this.addProducts("Blue Diamond", "Window Cloth", "Cleaning Paste", "Descaler", 1);
 	}
 
 	@Test(priority=8, dependsOnMethods={"OrderItems"})
@@ -182,7 +185,6 @@ public class PwsShop extends TestBase
 		line2.selectByVisibleText("2017");
 		getpws("amountTocharge").sendKeys("15.00");
 		getpws("AddPayment_button").click();
-		
 	}
 
 }

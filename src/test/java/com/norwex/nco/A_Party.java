@@ -20,8 +20,6 @@ import org.testng.annotations.Test;
 	    	  
 		Menus m = new Menus();
 		
-		
-		
 	@BeforeTest
     public void Authenticate() throws IOException, InterruptedException
     {  
