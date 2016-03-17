@@ -16,6 +16,8 @@ import org.testng.annotations.Test;
 	 
 	    private static String firstName = "J"+rand;
 	    private static String lastName = "A"+rand;
+	//    private static String firstName = "Ellen";  //"J"+rand;
+	//    private static String lastName ="Mcarthur"; // "A"+rand;
 	    private static String contactEmail= "JK"+rand+"@nwx.com";
 		private static String mobile = "2151101515";
 		private static String address= "2605 SW H Ave";
@@ -32,7 +34,7 @@ import org.testng.annotations.Test;
 	@Test(priority =1, description="Navigates to the User Settings page")
 	public void Navigate() throws InterruptedException
 		{
-			this.Short(5);
+			this.Short(2);
 			m.addcontactpage();
 		}
 	
@@ -105,7 +107,7 @@ import org.testng.annotations.Test;
 	}
 
  
- 	@Test (priority =12,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
+ 	//@Test (priority =12,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
  	public void Findcontact() throws InterruptedException, AWTException
  		{
  			this.Short(2);
@@ -130,7 +132,7 @@ import org.testng.annotations.Test;
 				System.out.println("Name match found"); 
  		}
  
-	@Test (priority =15,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
+	//@Test (priority =15,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
  	public void Contactdelete() throws InterruptedException, AWTException
  		{
 	 		this.backspace();

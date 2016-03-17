@@ -2,21 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Test Cases: Suite C" verbose="5" >
 
- <test name="Pws Contact Me">
-  <classes>
-      <class name="com.norwex.pws.PwsContactme" />
-    </classes>
-  </test> 
 
-<test name="PWS Create">
+<test name="PWS Basics">
     <classes>
-      <class name="com.norwex.pws.PwsCreate" />
+      <class name="com.norwex.pws.PwsBasics" />
     </classes>
   </test> 
   
-   <test name="Pws Logis">
+   <test name="Pws Contact Me">
   <classes>
-      <class name="com.norwex.pws.PwsLogins" />
+      <class name="com.norwex.pws.PwsContactme" />
     </classes>
   </test> 
   <test name="Pws Shop">

@@ -25,6 +25,7 @@ import org.testng.annotations.Test;
     {  
 		initialize();
 		Util.ncoLogin();
+		
     }
 	/******************************************************************************************************
 	*********************************** Create new party **************************************************
@@ -162,6 +163,12 @@ import org.testng.annotations.Test;
 		this.Short(2);
 		getobject("CardholderName").clear();
 		getobject("CardholderName").sendKeys("Alexy Desouza");
+		
+		Select m =  new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_month")));
+		m.selectByIndex(5);
+		Select yr = new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_year")));
+		yr.selectByVisibleText("2017"); 
+		
 		getobject("Add_button2").click();
 		getobject("ReviewParty").click();
 		this.Short(2);

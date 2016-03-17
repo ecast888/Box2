@@ -78,10 +78,9 @@ public class CustomerOrder extends TestBase
 	public void AddOrders() throws InterruptedException
 		{ 
 		this.Short(1);
-		this.AddProduct("1120 - Dryer Balls - $20.99", 1);
-		this.AddProduct("357053 - Bottle Brush Sleeve - $5.99", 1);
-		this.AddProduct("1000 - Dish Cloth - White - $9.99", 1);
-		this.AddProduct("1002 - Dish Cloth - Blue - $9.99", 1);
+		this.AddProduct("1002", 1);
+		this.AddProduct("354000", 2);
+		this.AddProduct("1515", 2);
 		this.Short(2);
 		}
 	@Test (priority=5)

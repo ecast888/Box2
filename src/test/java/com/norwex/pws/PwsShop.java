@@ -22,7 +22,6 @@ public class PwsShop extends TestBase
 	public void Authenticate() throws IOException, InterruptedException 
 		{   
 			initialize();
-			//TestUtility.pwsLogin();
 			dr.get(CONFIG.getProperty("PwsLoginPage"));
 		}
 	
@@ -42,19 +41,19 @@ public class PwsShop extends TestBase
 	public void AttachToParty() throws InterruptedException
 	{
 		getpws("AddToParty").click();
-		Select con = new Select(driver.findElement(By.id("form_search")) );
-	    con.selectByVisibleText("Feb22155835");
-	    this.Short(15);
+		dr.findElement(By.xpath("//*[@id='pws-search-party-form']/div/span/input")).sendKeys("March");
+	    this.Short(2);
+		dr.findElement(By.xpath("//ul[@class='ui-corner-all ui-state-focus']")).click();
 	    System.out.println("Stopped process!.. ");
 	    this.Short(30);
-	   
 	}
 
 	@Test(priority=6)
 	public void OrderItems() throws InterruptedException
 	{
 		dr.findElement(By.xpath("//*[@id='OrderHeader']/div[1]/div[1]/ul/li[12]/a")).click();
-		this.addProducts("Blue Diamond", "Window Cloth", "Cleaning Paste", "Descaler", 1);
+		
+		this.addProducts("Blue Diamond", "Window Cloth", "Descaler", 1);
 	}
 
 	@Test(priority=8, dependsOnMethods={"OrderItems"})
@@ -128,7 +127,7 @@ public class PwsShop extends TestBase
 	 public void NavigateToShop() throws InterruptedException
 	 { driver.findElement(By.xpath("//*[@id='shopnow']/a")).click(); }
 
-		private void addProducts( String item1, String item2, String item3, String item4, int i) throws InterruptedException
+		private void addProducts( String item1, String item2, String item3, int i) throws InterruptedException
 			{
 			System.out.println("!--- Adding products ---!");
 			getpws("SearchItem_input").clear();
@@ -145,13 +144,6 @@ public class PwsShop extends TestBase
 		
 			getpws("SearchItem_input").clear();
 			getpws("SearchItem_input").sendKeys(item3);    // item3
-			this.tab();	this.tab();	this.tab(); this.tab();
-			this.enter();
-			this.Short(2);
-			
-
-			getpws("SearchItem_input").clear();
-			getpws("SearchItem_input").sendKeys(item4);    // item4
 			this.tab();	this.tab();	this.tab(); this.tab();
 			this.enter();
 			this.Short(2);

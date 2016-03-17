@@ -1,16 +1,11 @@
 package com.norwex.pws;
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.SkipException;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import com.norwex.logins.Util;
 import com.norwex.nco.TestBase;
 
 	public class PwsBasics extends TestBase 
@@ -24,23 +19,21 @@ import com.norwex.nco.TestBase;
 		public static String address= "2605 SW H ave";
 		public static String address2= "beside river creek";
 		public static String zip= "73505";
-		public static String newuser= setUser(email);
 		
 		@BeforeTest
 		public void Authenticate() throws IOException, InterruptedException 
 			{   
 			initialize();
 			this.Short(2);
-			dr.get(CONFIG.getProperty("PwsLoginPage"));
+			dr.get(CONFIG.getProperty("PWSCustomerLogin"));
 			}
 		
 		@Test (priority =1)
 		public void CreateAccount() throws IOException, InterruptedException 
 		{   
-			this.Short(2);
-			getpws("customerlogin").click();
-			this.Short(1);
-			getpws("CreateAccount_link").click();
+			this.Short(5);
+			//getpws("customerlogin").click();
+			getpws("CreateAccount_link").click();    //PWSCustomerLogin
 			getpws("FirstName_input").sendKeys(pwsfirstName);
 			getpws("LastName_input").sendKeys(pwslastName);
 			getpws("Password_input").sendKeys(password);
@@ -60,7 +53,7 @@ import com.norwex.nco.TestBase;
 			if(isElementPresent(By.xpath("//*[@id='search-all-products']"))) //
 			{
 			System.out.println("--- New account successful! ---");
-			System.out.println("username : "+newuser);
+			System.out.println("username : "+email);
 			System.out.println("password : "+password);
 			}
 			else
@@ -76,8 +69,7 @@ import com.norwex.nco.TestBase;
 		}
 		public String getUser()
 		{
-			return newuser;
-			//return email;
+			return email;
 		}
 		
 		@Test (priority=2)
@@ -104,7 +96,7 @@ import com.norwex.nco.TestBase;
 			}
 		}
 		
-		@Test (priority=3)
+		//@Test (priority=3)
 		public void CustomerLogin() throws InterruptedException
 		{
 			dr.get(CONFIG.getProperty("PwsLoginPage"));
@@ -112,10 +104,7 @@ import com.norwex.nco.TestBase;
 			JavascriptExecutor tns = (JavascriptExecutor)driver;
 			tns.executeScript("arguments[0].click();", tnext);
 			
-			System.out.println("extracted user: "+getUser());
-			
 			getobject("consultantid").sendKeys(getUser());  // using getters and setters from a pws create class
-			this.Short(4);
 			getobject("password").sendKeys("testing123");
 			getpws("login").click();
 			

@@ -24,14 +24,12 @@ public class PwsContactme extends TestBase
 	public void Authenticate() throws IOException, InterruptedException 
 		{   
 		initialize();
-		//Util.pwsLogin(); 
-		dr.get(CONFIG.getProperty("PwsLoginPage"));
+		dr.get(CONFIG.getProperty("PwsLoginPage")); 	this.Short(2);
 		}
 	
 	@Test (priority =1)
 	public void ContactForm() throws IOException, InterruptedException 
 	{   
-		this.Short(2);
 		getpws("contactme_link").click();
 		getpws("firstname").sendKeys(firstname);
 		getpws("lastname").sendKeys(lastname);
@@ -39,13 +37,11 @@ public class PwsContactme extends TestBase
 		getpws("mobile").sendKeys(mobile);
 		getpws("address1").sendKeys(address1);
 		getpws("zip").sendKeys(zip);
-		getpws("zipsearch").click();
-		this.Short(2);
+		getpws("zipsearch").click();	this.Short(2); 
 		getpws("addressvalidate").click();
 		getpws("generalinquiry_checkbox").click();
 		getpws("comments").sendKeys("need to find out how to maximize discounts");
 		this.Short(2);
-		//getpws("captcha").click();
 		getpws("submit").click();
 	}
 	
