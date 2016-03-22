@@ -16,8 +16,8 @@ import com.norwex.nco.TestBase;
 public class Enrollment_CA extends TestBase 
 {
 	    public static String Region = "Canada";
-	    public static String firstName = "Martin";
-	    public static String lastName = "Hall";
+	    public static String firstName = "Paul";
+	    public static String lastName = "Banabas";
 	    public static String prefferedName="Mat";
 	    public static String email = "MT"+rand+"a@hotmail.com";
 	    public static String homephone= "2605562470";  
@@ -55,9 +55,9 @@ public class Enrollment_CA extends TestBase
 		lang.selectByVisibleText("English");
 		
 		//getobject("JoinCode_input").sendKeys(joincode);
-		this.Short(1);
+		this.Short(2);
 		getobject("Certify_checkbox").click();
-		this.Short(1);
+		this.Short(2);
 		getobject("Next_button").click(); 
 		
 		// Page 2: Personal Details

@@ -10,13 +10,11 @@
     <classes>
       <class name="com.norwex.nco.A_Party">
         <methods>
-          <include name="ConfirmShipping"/>
+          <include name="ReviewAndSubmit"/>
           <include name="HostPlanSummary"/>
-          <include name="NavigateToPartyPage"/>
-          <include name="UpdateGuestOrders"/>
           <include name="VerifySummary"/>
-          <include name="FinalPayment"/>
           <include name="addHostOrder"/>
+          <include name="PayForOrders"/>
           <include name="createParty"/>
           <include name="addGuestOrders"/>
           <include name="addGuests"/>

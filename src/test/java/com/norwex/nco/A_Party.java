@@ -15,8 +15,8 @@ import org.testng.annotations.Test;
 	    private static String addressInput= "851 Greenside Dr", addressInput2 ="Apt 1204";
 	    private static String zipcodeInput="75080";
 	    private static String cellPhone = "5155551155", cellPhone2= "8131154112";
-	    private static String partyName = "Feb"+rand; 
-	    public static  String newpartyName ="Feb"+trand;
+	    private static String partyName =  "Bananna" + "A450";//"Mar"+rand; 
+	    public static  String newpartyName ="BetaP12";
 	    	  
 		Menus m = new Menus();
 		
@@ -81,7 +81,6 @@ import org.testng.annotations.Test;
 	{   
 		this.addGuest("Mia", "Jones", "MJ"+rand+"@norwex.com");   	// 1st guest
 		this.addGuest("Aubrey", "Wilson", "AW"+rand+"@norwex.com");	// 2nd guest
-		this.addGuest("Zoe", "Martinez", "ZM"+rand+"@norwex.com");  // 3rd guest
 	} 
 	/******************************************************************************************************
 	*********************************** Add Guest orders **************************************************
@@ -91,74 +90,69 @@ import org.testng.annotations.Test;
 	public void addGuestOrders() throws InterruptedException, ClassNotFoundException
 	{
 		
-	//refresh();
 	
-	this.addMultipleItems("Cart3_button", "354100 - Spirinetts - $5.49",
+	this.addMultipleItems("Cart2_button", "354100 - Spirinetts - $5.49",
 			                              "354102 - Spirisponge - $9.99",
 										  "356400 - Mop Brackets - $11.99", 1);
 	this.PayWithCash();
 	
-	this.addMultipleItems("Cart2_button", "1120 - Dryer Balls - $20",
+	this.addMultipleItems("Cart1_button", "1120 - Dryer Balls - $20",
 										  "354000 - Spray Bottle - $6.99",
 								          "1505 - Basic Package - $32.99", 1);
 	this.PayWithCredit();
 
-	this.addMultipleItems("Cart1_button", "1128 - Sportzyme - $20.99",
-										  "1403 - Out to Lunch Duo - $17.99",
-										  "354000 - Spray Bottle - $6.99",  1);
-	this.PayWithCheck();
+	this.UpdateItem("2");
+	this.Short(2);
+	this.RemoveItem();  
 	
-	}
-	
-	/******************************************************************************************************
-	*********************************** Update Guest orders ***********************************************
-	*******************************************************************************************************/
-	
-	@Test (priority=6, dependsOnMethods={"addGuestOrders"})
-	public void UpdateGuestOrders() throws InterruptedException
-	{
-		this.UpdateItem("2");
-		this.Short(2);
-		this.RemoveItem();  
-	}
-	
-	/******************************************************************************************************
-	*********************************** Add Host orders****************************************************
-	*******************************************************************************************************/
-	
-	@Test (priority=7, dependsOnMethods={"addGuestOrders"})
-	public void addHostOrder() throws InterruptedException
-	{  
-		System.out.println("!--- Starting host order ---!");
-		getobject("AddHostOrder_link").click();
-		this.AddHostOrder("356400 - Mop Brackets - $11.99", 1);
-		this.AddHostOrder("357053 - Bottle Brush Sleeve - $5.99", 1);
-		this.AddHostOrder("357010 - Rubber Brush - $14.99", 3);
-		this.Short(2);
 	}
 	
 	/************************************************************************************************************************
 	*********************************** Review Bookings or Add new Booking***************************************************
 	*************************************************************************************************************************/
 	
-	@Test (priority=8, dependsOnMethods={"addHostOrder"})
-	public void ReviewBookings () throws InterruptedException
+	@Test (priority=6, dependsOnMethods={"addGuestOrders"})
+	public void ReviewBookings() throws InterruptedException
 	{  
 		System.out.println("!---Review Bookings---!");
-		getobject("ReviewBookings_link").click();
+		getobject("ReviewBookings").click(); 																	 //  Review Bookings link
 		this.Short(2);
-		//getobject("AcceptHost_alert").click();
-		this.NewBooking(newpartyName);
+		driver.findElement(By.xpath("//*[@id='addNewBooking']")).click();										 // Add New Booking Button
+		driver.findElement(By.xpath("//*[@id='norwex_maxbundle_party_partyname']")).sendKeys(newpartyName); 
 		this.Short(3);
-		getobject("Continue_button").click();   
+		driver.findElement(By.xpath("//*[@id='norwex_maxbundle_party_partydate']")).click();					// New Party Date
+		this.Short(3);
+		this.enter();
+		driver.findElement(By.xpath("//*[@id='norwex_maxbundle_party_save']")).click();
+		this.Short(3);
+		driver.findElement(By.xpath("//*[@id='proceed']")).click();		
 	}
+	
+	/******************************************************************************************************
+	*********************************** Add Host orders****************************************************
+	*******************************************************************************************************/
+	
+	@Test (priority=8, dependsOnMethods={"ReviewBookings"})
+	public void addHostOrder() throws InterruptedException
+	{  
+		System.out.println("!--- Starting host order ---!");
+		getobject("AddHostOrder_link").click();
+		this.AddHostOrder("356400", 1);
+		this.AddHostOrder("357053", 1);
+		this.AddHostOrder("357010", 3);
+		this.Short(2);
+		getobject("Proceed").click();   
+	}
+	
+
 
 	/******************************************************************************************************
 	*********************************** Pay for Orders ****************************************************
 	*******************************************************************************************************/
-	@Test (priority=9, dependsOnMethods={"ReviewBookings"})
-	public void FinalPayment() throws InterruptedException
+	@Test (priority=9, dependsOnMethods={"addHostOrder"})
+	public void PayForOrders() throws InterruptedException
 	{  
+		getobject("PayForOrders").click();
 		System.out.println("!---Confirm Final Pay---!");
 		this.Short(2);
 		getobject("CardholderName").clear();
@@ -170,12 +164,20 @@ import org.testng.annotations.Test;
 		yr.selectByVisibleText("2017"); 
 		
 		getobject("Add_button2").click();
+		
+	}
+	
+	@Test (priority=10, dependsOnMethods={"PayForOrders"})
+	public void ReviewAndSubmit () throws InterruptedException
+	{  
 		getobject("ReviewParty").click();
 		this.Short(2);
 		getobject("Finish_button").click();
 	}
 	
-	@Test (priority = 10, dependsOnMethods={"ReviewBookings"})
+	
+	
+	@Test (priority = 11, dependsOnMethods={"ReviewBookings"})
 	   public void HostPlanSummary()
 	   {
 		  System.out.println("!------ Host Plan Summary -------!");
@@ -256,7 +258,9 @@ import org.testng.annotations.Test;
 	
 	/**************************************************************************************************************
 	***************************************************************************************************************
+	***************************************************************************************************************
 	*************************************** Service Methods *******************************************************
+	***************************************************************************************************************
 	***************************************************************************************************************
 	**************************************************************************************************************/
 	
@@ -355,15 +359,17 @@ import org.testng.annotations.Test;
 	private void PayWithCredit() throws InterruptedException
 	{
 		
-		this.Short(3);
-		Select con = new Select(driver.findElement(By.id("norwex_maxbundle_orderpaymentmethod_paymentmethod")));
+		this.Short(2);
+		Select con =  new Select(dr.findElement(By.id("norwex_maxbundle_orderpaymentmethod_paymentmethod")));
 		con.selectByVisibleText("Credit Card"); 
+		
+		Select m =  new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_month")));
+		m.selectByIndex(5);
+		Select yr = new Select(dr.findElement(By.id("norwex_maxbundle_payment_creditcardprofileid_expiration_year")));
+		yr.selectByVisibleText("2017"); 
+		
 		this.Short(2);
 		getobject("Add_button2").click();
-		
-//		driver.findElement(By.xpath("//*[text()='select']")).click();
-//		driver.findElement(By.xpath("//*[text()='Credit Card']")).click();
-//		getobject("Add_button2").click();
 		
 	}
 	
@@ -386,8 +392,9 @@ import org.testng.annotations.Test;
 	{
 		Select con = new Select(driver.findElement(By.id("norwex_maxbundle_orderpaymentmethod_paymentmethod")));
 		con.selectByVisibleText("Check"); 
-		driver.findElement(By.id("norwex_maxbundle_payment_checknumber")).sendKeys("115002");
+		this.Short(2);
 		
+		driver.findElement(By.id("norwex_maxbundle_payment_checknumber")).sendKeys("115002");
 		WebElement Addbutton =dr.findElement(By.id("norwex_maxbundle_payment_submit"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();", Addbutton);
@@ -396,12 +403,10 @@ import org.testng.annotations.Test;
 	
 	private void AddHostOrder(String item, int i) throws InterruptedException
 	{
-		System.out.println("!--- Starting host order ---!"); //
+		System.out.println("!--- Adding host order ---!"); //
 		getobject("HostItem_input").clear();
 		getobject("HostItem_input").sendKeys(item);
-//		System.out.println("visible? :"+dr.findElement(By.xpath("//ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']")).getText());
-//		this.Short(1);
-//		getobject("GuestItem_Ajax").click();
+		this.tab();
 		getobject("HostQty_input").clear();
 		getobject("HostQty_input").sendKeys(String.valueOf(i));
 		this.Short(2);
@@ -415,9 +420,9 @@ import org.testng.annotations.Test;
 		getobject("AddNewBooking_button").click();
 		getobject("partyname_input").sendKeys(newpartyName);
 		getobject("partydate_input").click();
-		this.Short(1);
+		this.Short(4);
 		this.enter();
-		this.Short(2);
+		this.Short(4);
 		getobject("Save").click();
 	}
 }	

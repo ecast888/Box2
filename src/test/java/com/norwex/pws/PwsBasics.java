@@ -49,6 +49,7 @@ import com.norwex.nco.TestBase;
 			this.Short(2);
 			getpws("Submit_button").click();
 			System.out.println("pre status check ...");
+			this.Short(15);
 			
 			if(isElementPresent(By.xpath("//*[@id='search-all-products']"))) //
 			{
