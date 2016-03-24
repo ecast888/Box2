@@ -15,8 +15,8 @@ import org.testng.annotations.Test;
 	    private static String addressInput= "851 Greenside Dr", addressInput2 ="Apt 1204";
 	    private static String zipcodeInput="75080";
 	    private static String cellPhone = "5155551155", cellPhone2= "8131154112";
-	    private static String partyName =  "Bananna" + "A450";//"Mar"+rand; 
-	    public static  String newpartyName ="BetaP12";
+	    private static String partyName =  "Mar"+rand; 
+	    public static  String newpartyName ="Beta"+rand;
 	    	  
 		Menus m = new Menus();
 		
@@ -86,7 +86,7 @@ import org.testng.annotations.Test;
 	*********************************** Add Guest orders **************************************************
 	*******************************************************************************************************/
 	
-	@Test (priority=5, dependsOnMethods={"addGuests"})
+	@Test (priority=6, dependsOnMethods={"addGuests"})
 	public void addGuestOrders() throws InterruptedException, ClassNotFoundException
 	{
 		
@@ -111,7 +111,7 @@ import org.testng.annotations.Test;
 	*********************************** Review Bookings or Add new Booking***************************************************
 	*************************************************************************************************************************/
 	
-	@Test (priority=6, dependsOnMethods={"addGuestOrders"})
+	@Test (priority=7, dependsOnMethods={"addGuestOrders"})
 	public void ReviewBookings() throws InterruptedException
 	{  
 		System.out.println("!---Review Bookings---!");
@@ -125,7 +125,7 @@ import org.testng.annotations.Test;
 		this.enter();
 		driver.findElement(By.xpath("//*[@id='norwex_maxbundle_party_save']")).click();
 		this.Short(3);
-		driver.findElement(By.xpath("//*[@id='proceed']")).click();		
+		//driver.findElement(By.xpath("//*[@id='proceed']")).click();		
 	}
 	
 	/******************************************************************************************************
@@ -141,7 +141,8 @@ import org.testng.annotations.Test;
 		this.AddHostOrder("357053", 1);
 		this.AddHostOrder("357010", 3);
 		this.Short(2);
-		getobject("Proceed").click();   
+		//getobject("Proceed").click();   
+		System.out.println("!--- Finish host order ---!");
 	}
 	
 
@@ -165,6 +166,8 @@ import org.testng.annotations.Test;
 		
 		getobject("Add_button2").click();
 		
+		System.out.println("!--- Finish final pay ---!");
+		
 	}
 	
 	@Test (priority=10, dependsOnMethods={"PayForOrders"})
@@ -177,8 +180,8 @@ import org.testng.annotations.Test;
 	
 	
 	
-	@Test (priority = 11, dependsOnMethods={"ReviewBookings"})
-	   public void HostPlanSummary()
+	@Test (priority = 15, dependsOnMethods={"ReviewAndSubmit"})
+	   public void FinalSummary()
 	   {
 		  System.out.println("!------ Host Plan Summary -------!");
 		  String GuestOrderVolume= dr.findElement(By.xpath("//*[@id='summaryToggle']/div[2]/div[1]/div[2]/div[1]/div[2]"))
@@ -244,17 +247,7 @@ import org.testng.annotations.Test;
 		   System.out.println("Amount Due Norwex: "+AmtDueNorwex);
 		   
 	   }
-	
-	@Test (priority = 10, dependsOnMethods={"HostPlanSummary"})
-	   public void VerifySummary()
-	   {
-		
-	   }
-//	@AfterTest
-//	public void closebrowser() throws InterruptedException
-//		{
-//			this.close(15);
-//		}
+
 	
 	/**************************************************************************************************************
 	***************************************************************************************************************
@@ -291,8 +284,8 @@ import org.testng.annotations.Test;
 	}
 	
 	private void addSingleItem(String cart, String item, int i) throws InterruptedException
-	
 		{
+		
 		System.out.println("!--- Adding single order --!");
 		getobject(cart).click();   // cart 4 corresponds with guest 1
 		this.Short(2);

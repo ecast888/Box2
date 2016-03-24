@@ -105,12 +105,14 @@ public class TestBase
 			*******************************************************************************************************/
 				if (CONFIG.getProperty("browser").equals("ff")) {
 				dr = new FirefoxDriver(fp);
+				dr.manage().deleteAllCookies();
 				dr.manage().window().maximize();
 				dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 				
 				
 				}else if (CONFIG.getProperty("browser").equals("cc")) {
 					System.setProperty("webdriver.chrome.driver", "C://Wspace//chromedriver.exe");
+					 dr.manage().deleteAllCookies();
 					 dr = new ChromeDriver();
 					 dr.manage().window().maximize(); 
 				}

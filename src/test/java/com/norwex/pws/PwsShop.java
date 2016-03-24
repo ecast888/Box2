@@ -1,15 +1,10 @@
 package com.norwex.pws;
+
 import java.io.IOException;
-import com.norwex.pws.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.SkipException; 
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import com.norwex.nco.Menus;
 import com.norwex.nco.TestBase;
 
 
@@ -22,19 +17,24 @@ public class PwsShop extends TestBase
 	public void Authenticate() throws IOException, InterruptedException 
 		{   
 			initialize();
-			dr.get(CONFIG.getProperty("PwsLoginPage"));
+			this.Short(2);
+			driver.manage().deleteAllCookies();
+			String cookies= driver.manage().getCookies().toString();
+			dr.get(CONFIG.getProperty("PWSCustomerLogin"));
+			System.out.println("cookies" +cookies);
 		}
 	
 	@Test(priority=1)
 	public void SetAccount() throws InterruptedException, IOException
 	{
+		this.Short(3);
 		p.CreateAccount();
 	}
 	
 	@Test(priority=2)
 	public void Shop() throws InterruptedException
 	{
-		NavigateToShop();
+		this.NavigateToShop();
 	}
 	
 	//@Test(priority=4)
@@ -61,6 +61,7 @@ public class PwsShop extends TestBase
 	{
 		this.Short(2);
 		getpws("ViewCart").click();
+		System.out.println("!--- Updating Items ---!");
 		this.UpdateItem(2);
 		this.Short(1);
 		this.RemoveItem();
@@ -70,6 +71,7 @@ public class PwsShop extends TestBase
 	public void CheckOut() throws InterruptedException
 	{
 		this.Short(2);
+		System.out.println("!--- Check out ---!");
 		getpws("checkout_link").click();
 		getpws("continue_button").click();
 		
@@ -78,7 +80,7 @@ public class PwsShop extends TestBase
 	@Test(priority=12, dependsOnMethods={"CheckOut"})
 	public void PayForOrders() throws InterruptedException
 	{
-		System.out.println("!----- Pay for Orders -----!");
+		System.out.println("!----- Pay for Order -----!");
 		this.refresh();
 		getpws("AddPayment_button").click();
 		getpws("Continue_button2").click();
@@ -110,11 +112,6 @@ public class PwsShop extends TestBase
 		 System.out.println("Amount Due Norwex : "+AmtDueNorwex);
 	   }
 	
-//	@AfterTest
-//	public void closebrowser() throws InterruptedException
-//		{
-//			//this.close(15);
-//		}
 	
 	/**************************************************************************************************************
 	***************************************************************************************************************
@@ -151,7 +148,6 @@ public class PwsShop extends TestBase
 		
 	 private void UpdateItem(int i) throws InterruptedException
 	 {
-		 System.out.println("!--- Updating Items ---!");
 		 getpws("Edit_icon").click();
 		 
 		 getpws("EditQty_input").clear();

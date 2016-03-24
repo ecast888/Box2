@@ -16,8 +16,6 @@ import org.testng.annotations.Test;
 	 
 	    private static String firstName = "J"+rand;
 	    private static String lastName = "A"+rand;
-	//    private static String firstName = "Ellen";  //"J"+rand;
-	//    private static String lastName ="Mcarthur"; // "A"+rand;
 	    private static String contactEmail= "JK"+rand+"@nwx.com";
 		private static String mobile = "2151101515";
 		private static String address= "2605 SW H Ave";
@@ -63,7 +61,7 @@ import org.testng.annotations.Test;
 	@Test (priority =6, dependsOnMethods={"AddNewContact"})
 	public void VerifyContactSaved() throws InterruptedException
 		{
-			if(isElementPresent(By.xpath("html/body/div[2]/div/div[5]/div[2]"))) // check if alert box appears
+			if(isElementPresent(By.xpath("html/body/div[1]/div/div/section[2]/div[1]/div[2]"))) // check if alert box appears
 				{
 				System.out.println("!---- Contact Saved ----!");
 				}
@@ -75,7 +73,7 @@ import org.testng.annotations.Test;
 			this.Short(2);
 		}
 	
-	//@Test (priority =9)
+	@Test (priority =9)
 	public void AttemptDuplicate() throws InterruptedException
 	{
 		
@@ -107,7 +105,7 @@ import org.testng.annotations.Test;
 	}
 
  
- 	//@Test (priority =12,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
+ 	@Test (priority =12,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
  	public void Findcontact() throws InterruptedException, AWTException
  		{
  			this.Short(2);
@@ -131,8 +129,7 @@ import org.testng.annotations.Test;
 				}
 				System.out.println("Name match found"); 
  		}
- 
-	//@Test (priority =15,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
+ 	@Test (priority =15,  dependsOnMethods={"AddNewContact"}) // invocationCount = 100,
  	public void Contactdelete() throws InterruptedException, AWTException
  		{
 	 		this.backspace();
@@ -141,7 +138,7 @@ import org.testng.annotations.Test;
 			getcon("searchbox").sendKeys(firstName);
 			this.Short(3);
 			
-			if(isElementPresent(By.xpath("//*[@id='contacts']/tbody/tr/td[9]/a[5]/span")))
+			if(isElementPresent(By.xpath("//*[@id='contacts']/tbody/tr/td[8]/a[5]/span")))
 			{
 			System.out.println("!--- delete icon identified ---!");
 			getcon("deletecontact").click();

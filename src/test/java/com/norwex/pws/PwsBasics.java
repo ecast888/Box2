@@ -1,4 +1,5 @@
 package com.norwex.pws;
+
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -25,13 +26,14 @@ import com.norwex.nco.TestBase;
 			{   
 			initialize();
 			this.Short(2);
+			driver.manage().deleteAllCookies();
 			dr.get(CONFIG.getProperty("PWSCustomerLogin"));
 			}
 		
 		@Test (priority =1)
 		public void CreateAccount() throws IOException, InterruptedException 
 		{   
-			this.Short(5);
+			this.Short(4);
 			//getpws("customerlogin").click();
 			getpws("CreateAccount_link").click();    //PWSCustomerLogin
 			getpws("FirstName_input").sendKeys(pwsfirstName);

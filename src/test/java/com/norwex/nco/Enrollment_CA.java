@@ -42,7 +42,6 @@ public class Enrollment_CA extends TestBase
 	@Test(priority =1)
 	public void SignUp() throws InterruptedException
 	{
-		// Initialize mouse hovering
 		this.Short(4);
 		m.enrollmentpage();
 		
@@ -109,6 +108,14 @@ public class Enrollment_CA extends TestBase
 		Select yr = new Select(dr.findElement(By.id("norwex_maxbundle_creditcardprofile_expiration_year")));
 		yr.selectByValue("2017");
 		getobject("Next[6]_button").click();
+	}
+	
+	@Test(priority =2)
+	public void Confirmation() throws InterruptedException
+	{
+		// Page 7: confirmation page
+		String consultantid= getenro("consultantid").getAttribute("value").toString();
+		System.out.println("Consultant ID: "+ " "+consultantid); 
 	}
 	
  }
